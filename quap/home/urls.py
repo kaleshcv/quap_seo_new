@@ -21,5 +21,8 @@ urlpatterns = [
     path('',indexPage),
     path('products-shops',productsHomePage),
     path('store-locator',storeLocator),
+    path('blog-details-right-sidebar',blogDetailsRightSidebar),
+    #path('download-cities',downloadCities),
+    path('select-city/<str:statename>',storeLocatorCounties),
 
 ]

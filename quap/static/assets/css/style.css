@@ -5279,7 +5279,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
 }
 
 .select-search-category ul.list {
-  height: 440px;
+  height: auto;
   overflow-y: auto;
   overscroll-behavior-x: none;
 }
