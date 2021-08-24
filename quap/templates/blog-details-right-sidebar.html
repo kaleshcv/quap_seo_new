@@ -147,26 +147,27 @@
                                 <a href="blog-details-left-sidebar.html">
                                     <img src="{% static 'assets/images/blog/large-size/1.jpg' %}" alt="Uren's Blog Image">
                                 </a>
-                                <span class="post-date">12-09-19</span>
+                                <span class="post-date">{{blog.date_created}}</span>
                             </div>
                             <div class="blog-content">
-                                <h3><a href="blog-details-left-sidebar.html">Blog Image Post</a></h3>
-                                <p>Fugiat, quidem praesentium aliquam laboriosam possimus labore quaerat voluptatibus corrupti omnis. Officia dolor perferendis, corporis sapiente tenetur vel quae distinctio aliquam omnis nobis eaque blanditiis ipsum sint porro ex aut optio assumenda consequuntur molestiae nostrum. Quasi atque nam autem iure, delectus a sed pariatur molestias laboriosam tempora?</p>
-                                <div class="uren-btn-ps_left">
-                                    <a class="uren-btn-2" href="blog-details-left-sidebar.html">Read More</a>
-                                </div>
+                                <h3><a href="blog-details-left-sidebar.html">{{blog.title}}</a></h3>
+                                <p>{{blog.desc_1|safe}}</p>
+
                             </div>
                             <div class="uren-blog-blockquote">
                                 <blockquote>
                                     <p>
-                                        Saepe nisi voluptas vero blanditiis dolorem quis quia facere exercitationem minima perferendis excepturi perspiciatis reiciendis possimus ex eveniet, quisquam ad modi aut earum asperiores quibusdam harum totam quas sunt! Atque corrupti delectus laudantium dolore consequatur. Delectus earum vero quia necessitatibus perferendis itaque, nisi maxime nobis porro dolorum assumenda ut saepe consectetur praesentium, aliquam minima eaque inventore minus sunt rem incidunt corrupti pariatur autem ipsa. Itaque, quaerat sint omnis nesciunt iste deleniti molestiae, maiores laudantium a possimus aspernatur, amet unde facere incidunt quo nisi libero nam! Distinctio laborum nobis quaerat repudiandae placeat recusandae nesciunt quo perferendis ducimus incidunt fugit cumque voluptatem nisi ea atque fuga architecto pariatur magni neque reiciendis temporibus, porro cupiditate! Debitis illo ducimus optio iste explicabo consectetur maxime corporis, ipsam id fugiat enim voluptatem laboriosam eum voluptates molestiae deserunt nobis hic, sed nostrum! Earum perferendis veritatis corrupti ad nam veniam.
+                                        {{blog.desc_2|safe}}
                                     </p>
                                 </blockquote>
                             </div>
                             <div class="blog-additional_information">
                                 <p>
-                                    Aspernatur autem dolores optio dolore temporibus voluptatem ut ad nulla dolor eligendi ipsum eum, aperiam officia debitis quasi? Voluptas, perspiciatis assumenda perferendis cumque quaerat, exercitationem quas dolorem tenetur molestias neque ratione modi nemo ex, suscipit sed obcaecati nam recusandae eum itaque unde.
+                                    {{blog.desc_3|safe}}
                                 </p>
+                                <div class="uren-btn-ps_left">
+                                    <a class="uren-btn-2" href="blog-details-left-sidebar.html">Read More</a>
+                                </div>
                             </div>
                             <div class="uren-tag-line">
                                 <h4>Tag:</h4>

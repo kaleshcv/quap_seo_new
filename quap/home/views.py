@@ -25,7 +25,9 @@ def downloadCities(request):
 
 
 def indexPage(request):
-    return render(request,'index.html')
+    blogs = Blogs.objects.all()
+    data = {'blogs': blogs}
+    return render(request,'index.html',data)
 def productsHomePage(request):
     return render(request,'shop-left-sidebar.html')
 def storeLocator(request):
@@ -42,5 +44,8 @@ def storeLocatorCounties(request,statename):
     data = {'location':location,'state':statename}
     return render(request,'store-locator-county-page.html',data)
 
-def blogDetailsRightSidebar(request):
-    return render(request,'blog-details-right-sidebar.html')
+def blogDetailsRightSidebar(request,pk):
+    pk=pk
+    blog = Blogs.objects.get(id=pk)
+    data = {'blog':blog}
+    return render(request,'blog-details-right-sidebar.html',data)

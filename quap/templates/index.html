@@ -12,7 +12,7 @@
                             <label>Popular Search:</label>
                             <a href="javascript:void(0)">Brakes & Rotors,</a>
                             <a href="javascript:void(0)">Lighting,</a>
-                            <a href="javascript:void(0)">Perfomance,</a>
+                            <a href="javascript:void(0)">Performance,</a>
                             <a href="javascript:void(0)">Wheels & Tires</a>
                         </div>
                     </div>
@@ -29,11 +29,11 @@
                             <!-- Begin Single Slide Area -->
                             <div class="single-slide animation-style-01 bg-1">
                                 <div class="slider-content">
-                                    <span>Quality Used Auto Parts at your Doorstep</span>
-                                    <h3>Car interior</h3>
-                                    <h4>Starting at <span>$99.00</span></h4>
+                                    <span>CERTIFIED OEM USED AUTO PARTS</span>
+                                    <h3>SEDANS, SUV’S, CUV’S & TRUCKS</h3>
+                                    <h4>Starting from <span>$50.00</span></h4>
                                     <div class="uren-btn-ps_left slide-btn">
-                                        <a class="uren-btn" href="shop-left-sidebar.html">Read More</a>
+                                        <a class="uren-btn" href="shop-left-sidebar.html">Marketplace</a>
                                     </div>
                                 </div>
                             </div>
@@ -1175,90 +1175,24 @@
                             {"breakpoint":768, "settings": {"slidesToShow": 2}},
                             {"breakpoint":576, "settings": {"slidesToShow": 1}}
                         ]'>
+
+                            {% for blog in blogs %}
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="blog-img img-hover_effect">
-                                        <a href="/blog-details-right-sidebar">
+                                        <a href="/blog-details-right-sidebar/{{blog.id}}">
                                             <img src="{% static 'assets/images/blog/large-size/1.jpg' %}" alt="Uren's Blog Image">
                                         </a>
-                                        <span class="post-date">12-09-20</span>
+                                        <span class="post-date">{{blog.date_created}}</span>
                                     </div>
                                     <div class="blog-content">
-                                        <h3><a href="blog-details-left-sidebar.html">Quaerat eligendi dolores autem omnis sed</a></h3>
-                                        <p>Maiores accusamus unde nulla quaerat deserunt, beatae molestias blanditiis aut recusandae saepe, quis, culpa voluptatum?</p>
+                                        <h3><a href="blog-details-left-sidebar.html">{{blog.title}}</a></h3>
+                                        <p>{{blog.desc_1|slice:":150"|safe}}...</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="blog-img img-hover_effect">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img src="{% static 'assets/images/blog/large-size/2.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                        <span class="post-date">15-09-19</span>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="blog-details-left-sidebar.html">Nulla voluptatum maiores dolorem nobis</a></h3>
-                                        <p>Maiores accusamus unde nulla quaerat deserunt, beatae molestias blanditiis aut recusandae saepe, quis, culpa voluptatum?</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="blog-img img-hover_effect">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img src="{% static 'assets/images/blog/large-size/3.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                        <span class="post-date">19-09-19</span>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="blog-details-left-sidebar.html">Laudantium minus excepturi expedita dolore</a></h3>
-                                        <p>Maiores accusamus unde nulla quaerat deserunt, beatae molestias blanditiis aut recusandae saepe, quis, culpa voluptatum?</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="blog-img img-hover_effect">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img src="{% static 'assets/images/blog/large-size/4.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                        <span class="post-date">16-09-19</span>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="blog-details-left-sidebar.html">Aliquam nihil dolorem beatae totam tempora</a></h3>
-                                        <p>Maiores accusamus unde nulla quaerat deserunt, beatae molestias blanditiis aut recusandae saepe, quis, culpa voluptatum?</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="blog-img img-hover_effect">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img src="{% static 'assets/images/blog/large-size/5.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                        <span class="post-date">20-09-19</span>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="blog-details-left-sidebar.html">Reprehenderit illum iusto sit asperiores</a></h3>
-                                        <p>Maiores accusamus unde nulla quaerat deserunt, beatae molestias blanditiis aut recusandae saepe, quis, culpa voluptatum?</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="blog-img img-hover_effect">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img src="{% static 'assets/images/blog/large-size/6.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                        <span class="post-date">25-09-19</span>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="blog-details-left-sidebar.html">Corrupti, dolore tempore totam voluptate</a></h3>
-                                        <p>Maiores accusamus unde nulla quaerat deserunt, beatae molestias blanditiis aut recusandae saepe, quis, culpa voluptatum?</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
