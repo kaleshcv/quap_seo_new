@@ -44,8 +44,14 @@ def storeLocatorCounties(request,statename):
     data = {'location':location,'state':statename}
     return render(request,'store-locator-county-page.html',data)
 
+def blogHomePage(request):
+    blogs = Blogs.objects.all()
+    data = {'blogs':blogs}
+    return render(request,'blog-list-fullwidth.html',data)
+
 def blogDetailsRightSidebar(request,pk):
     pk=pk
     blog = Blogs.objects.get(id=pk)
-    data = {'blog':blog}
+    recent_blogs = Blogs.objects.all().order_by('-date_created')[:10]
+    data = {'blog':blog,'recent_blogs':recent_blogs}
     return render(request,'blog-details-right-sidebar.html',data)

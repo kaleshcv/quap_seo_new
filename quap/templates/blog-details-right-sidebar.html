@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% block main %}
 {% load static %}
-        <!-- Uren's Header Main Area End Here -->
+
         <!-- Begin Uren's Breadcrumb Area -->
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Blog Details</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Blog No1 Details</li>
+                        <li><a href="/">Home</a></li>
+                        <li>Blog</li>
+                        <li class="active">Details</li>
                     </ul>
                 </div>
             </div>
@@ -34,101 +35,27 @@
 
                             <div class="uren-blog-sidebar">
                                 <h4 class="uren-blog-sidebar-title">Recent Posts</h4>
+
+                                {% for blog in recent_blogs %}
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
                                         <a href="blog-details-left-sidebar.html">
-                                            <img class="img-full" src="{% static 'assets/images/blog/large-size/1.jpg' %}" alt="Uren's Blog Image">
+                                            <img class="img-full" src="{{blog.main_image.url}}" alt="QUAP's Blog Image">
                                         </a>
                                     </div>
                                     <div class="recent-post_desc">
-                                        <span><a href="blog-details-left-sidebar.html">Ut eum laborum</a></span>
-                                        <span class="post-date">September 25,2019</span>
+                                        <span><a href="blog-details-left-sidebar.html">{{blog.title}}</a></span>
+                                        <span class="post-date">{{blog.date_created}}</span>
                                     </div>
                                 </div>
-                                <div class="recent-post">
-                                    <div class="recent-post_thumb">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img class="img-full" src="{% static 'assets/images/blog/large-size/2.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                    </div>
-                                    <div class="recent-post_desc">
-                                        <span><a href="blog-gallery-format.html">Soluta ad tempore</a></span>
-                                        <span class="post-date">September 24,2019</span>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="recent-post_thumb">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img class="img-full" src="{% static 'assets/images/blog/large-size/3.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                    </div>
-                                    <div class="recent-post_desc">
-                                        <span><a href="blog-details-left-sidebar.html">Possimus reiciendis</a></span>
-                                        <span class="post-date">September 24,2019</span>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="recent-post_thumb">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img class="img-full" src="{% static 'assets/images/blog/large-size/4.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                    </div>
-                                    <div class="recent-post_desc">
-                                        <span><a href="blog-details-left-sidebar.html">Tortor Posuere</a></span>
-                                        <span class="post-date">September 24,2019</span>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="recent-post_thumb">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img class="img-full" src="{% static 'assets/images/blog/large-size/5.jpg' %}" alt="Uren's Blog Image">
-                                        </a>
-                                    </div>
-                                    <div class="recent-post_desc">
-                                        <span><a href="blog-details-left-sidebar.html">Hello World!</a></span>
-                                        <span class="post-date">September 24,2019</span>
-                                    </div>
-                                </div>
+
+                                {% endfor %}
                             </div>
+                            <!-- Products
                             <div class="uren-blog-sidebar">
-                                <h4 class="uren-blog-sidebar-title">Comments</h4>
-                                <div class="recent-comment">
-                                    <div class="user-img">
-                                        <img class="img-full" src="{% static 'assets/images/blog/admin.jpg' %}" alt="Uren's Blog Image">
-                                    </div>
-                                    <div class="user-info">
-                                        <span>HasTech say:</span>
-                                        <a href="javascipt:void(0)">Nulla auctor mi vel nisl...</a>
-                                    </div>
-                                </div>
-                                <div class="recent-comment">
-                                    <div class="user-img">
-                                        <img class="img-full" src="{% static 'assets/images/blog/user.jpg' %}" alt="Uren's Blog Image">
-                                    </div>
-                                    <div class="user-info">
-                                        <span>Kathy Young say:</span>
-                                        <a href="javascipt:void(0)">Mauris Venenatis Orci Quis...</a>
-                                    </div>
-                                </div>
-                                <div class="recent-comment">
-                                    <div class="user-img">
-                                        <img class="img-full" src="{% static 'assets/images/blog/admin.jpg' %}" alt="Uren's Blog Image">
-                                    </div>
-                                    <div class="user-info">
-                                        <span>HasTech say:</span>
-                                        <a href="javascipt:void(0)">Quisque Semper Nunc Vitae...</a>
-                                    </div>
-                                </div>
-                                <div class="recent-comment">
-                                    <div class="user-img">
-                                        <img class="img-full" src="{% static 'assets/images/blog/user.jpg' %}" alt="Uren's Blog Image">
-                                    </div>
-                                    <div class="user-info">
-                                        <span>Kathy Young say:</span>
-                                        <a href="javascipt:void(0)">Thanks for the information, anyway :)</a>
-                                    </div>
-                                </div>
+                                <h4 class="uren-blog-sidebar-title">Products</h4>
                             </div>
+                            --->
                             <div class="uren-blog-sidebar">
                                 <h4 class="uren-blog-sidebar-title">Tags</h4>
                                 <ul class="uren-tags_list">
@@ -145,35 +72,33 @@
                         <div class="blog-item">
                             <div class="blog-img img-hover_effect">
                                 <a href="blog-details-left-sidebar.html">
-                                    <img src="{% static 'assets/images/blog/large-size/1.jpg' %}" alt="Uren's Blog Image">
+                                    <img src="{{blog.main_image.url}}" alt="QUAP's Blog Image">
                                 </a>
                                 <span class="post-date">{{blog.date_created}}</span>
                             </div>
                             <div class="blog-content">
                                 <h3><a href="blog-details-left-sidebar.html">{{blog.title}}</a></h3>
-                                <p>{{blog.desc_1|safe}}</p>
+                                <p>{{blog.desc|safe}}</p>
 
                             </div>
                             <div class="uren-blog-blockquote">
                                 <blockquote>
                                     <p>
-                                        {{blog.desc_2|safe}}
+                                        {{blog.focus_content|safe}}
                                     </p>
                                 </blockquote>
                             </div>
                             <div class="blog-additional_information">
                                 <p>
-                                    {{blog.desc_3|safe}}
+                                    {{blog.body|safe}}
                                 </p>
                                 <div class="uren-btn-ps_left">
-                                    <a class="uren-btn-2" href="blog-details-left-sidebar.html">Read More</a>
+                                    <a class="uren-btn-2" href="/quap-all-blogs">Read More Blogs</a>
                                 </div>
                             </div>
                             <div class="uren-tag-line">
                                 <h4>Tag:</h4>
-                                <a href="javascript:void(0)">Motorcycle</a>,
-                                <a href="javascript:void(0)">Vehicle</a>,
-                                <a href="javascript:void(0)">Sports</a>
+                                <a href="#">{{blog.tags}}</a>
                             </div>
                             <div class="uren-social_link">
                                 <ul>
@@ -199,6 +124,8 @@
                                     </li>
                                 </ul>
                             </div>
+
+                            <!------------- Comment section
                             <div class="uren-comment-section">
                                 <h3>03 comment</h3>
                                 <ul>
@@ -249,6 +176,8 @@
                                     </li>
                                 </ul>
                             </div>
+                            comment section End here -------------------------->
+
                             <div class="uren-blog-comment-wrapper">
                                 <h3>leave a reply</h3>
                                 <p>Your email address will not be published. Required fields are marked *</p>

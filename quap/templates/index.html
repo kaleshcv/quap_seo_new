@@ -1181,19 +1181,22 @@
                                 <div class="inner-slide">
                                     <div class="blog-img img-hover_effect">
                                         <a href="/blog-details-right-sidebar/{{blog.id}}">
-                                            <img src="{% static 'assets/images/blog/large-size/1.jpg' %}" alt="Uren's Blog Image">
+                                            <img src="{{blog.main_image.url}}" alt="Quap's Blog Image" style="height:225px">
                                         </a>
                                         <span class="post-date">{{blog.date_created}}</span>
                                     </div>
                                     <div class="blog-content">
                                         <h3><a href="blog-details-left-sidebar.html">{{blog.title}}</a></h3>
-                                        <p>{{blog.desc_1|slice:":150"|safe}}...</p>
+                                        <p>{{blog.desc|slice:":150"|safe}}...</p>
                                     </div>
                                 </div>
                             </div>
                             {% endfor %}
 
                         </div>
+                    </div>
+                    <div>
+                        <a class="uren-btn-2" href="/quap-all-blogs">Read More</a>
                     </div>
                 </div>
             </div>
