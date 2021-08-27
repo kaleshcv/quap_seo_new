@@ -30,15 +30,17 @@ def indexPage(request):
     return render(request,'index.html',data)
 def productsHomePage(request):
     return render(request,'shop-left-sidebar.html')
+
+def productShopLocalArea(request):
+    return render(request, 'shop-left-sidebar-from-counties.html')
+
 def storeLocator(request):
 
     locations = StateCityList.objects.values_list('state', flat=True).distinct()
-    print(locations)
     data={'locations':locations}
     return render(request,'store-locator-home-page.html',data)
 
 def storeLocatorCounties(request,statename):
-
     statename = statename
     location = StateCityList.objects.filter(state=statename)
     data = {'location':location,'state':statename}

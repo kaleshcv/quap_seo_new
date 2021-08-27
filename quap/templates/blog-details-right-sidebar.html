@@ -39,12 +39,12 @@
                                 {% for blog in recent_blogs %}
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
-                                        <a href="blog-details-left-sidebar.html">
+                                        <a href="/blog-details-right-sidebar/{{blog.id}}">
                                             <img class="img-full" src="{{blog.main_image.url}}" alt="QUAP's Blog Image">
                                         </a>
                                     </div>
                                     <div class="recent-post_desc">
-                                        <span><a href="blog-details-left-sidebar.html">{{blog.title}}</a></span>
+                                        <span><a href="/blog-details-right-sidebar/{{blog.id}}">{{blog.title}}</a></span>
                                         <span class="post-date">{{blog.date_created}}</span>
                                     </div>
                                 </div>
@@ -78,17 +78,17 @@
                             </div>
                             <div class="blog-content">
                                 <h3><a href="blog-details-left-sidebar.html">{{blog.title}}</a></h3>
-                                <p>{{blog.desc|safe}}</p>
+                                <p style="text-align:justify">{{blog.desc|safe}}</p>
 
                             </div>
                             <div class="uren-blog-blockquote">
                                 <blockquote>
-                                    <p>
+                                    <p style="text-align:justify">
                                         {{blog.focus_content|safe}}
                                     </p>
                                 </blockquote>
                             </div>
-                            <div class="blog-additional_information">
+                            <div class="blog-additional_information" style="text-align:justify">
                                 <p>
                                     {{blog.body|safe}}
                                 </p>

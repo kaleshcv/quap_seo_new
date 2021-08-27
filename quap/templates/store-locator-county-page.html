@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title%}
+Quick Used Auto Parts in {{state}} - From Salvage & Junkyard | QUAP
+{% endblock title %}
 {% block main %}
 {% load static %}
 
@@ -56,7 +59,7 @@
                         <div class="row" style="padding:30px">
                             {% for loc in location %}
                             <div class="col-lg-2">
-                                <p><a href="">{{loc.countyName}}</a></p>
+                                <p><a href="/products-shops-local">{{loc.countyName}}</a></p>
                             </div>
                             {% endfor %}
                         </div>

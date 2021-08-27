@@ -20,6 +20,7 @@ from .views import *
 urlpatterns = [
     path('',indexPage),
     path('products-shops',productsHomePage),
+    path('products-shops-local',productShopLocalArea),
     path('store-locator',storeLocator),
     path('blog-details-right-sidebar/<int:pk>',blogDetailsRightSidebar),
     #path('download-cities',downloadCities),
