@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
-{% block title%}Quick Used Auto Parts in USA - From Salvage & Junkyard, Online | QUAP{% endblock title %}
-{% block desc %}<meta name="description" content="QUAP helps you order quality auto parts and accessories online, in USA at your doorstep Get access to 20 Million used auto parts and advice from experts.">{% endblock desc%}
+{% block title%}
+    Quick Used Auto Parts in USA - From Salvage & Junkyard, Online | QUAP
+{% endblock title %}
+{% block desc %}
+    <meta name="description" content="QUAP helps you order quality auto parts and accessories online, in USA at your doorstep Get access to 20 Million used auto parts and advice from experts.">
+{% endblock desc%}
 {% block main %}
 {% load static %}
 
@@ -122,6 +126,56 @@
             </div>
         </div>
         Uren's Shipping Area End Here -->
+
+        <!-- Begin Uren's Login Register Area -->
+        <div class="uren-login-register_area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+                        <!-- Login Form s-->
+                        <form action="#">
+                            <div class="login-form">
+                                <h4 class="login-title">Find A Part Now</h4>
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label>Year</label>
+                                        <select name="year" id="" class="form-control">
+                                            {% for ye in all_years %}
+                                            <option value="{{ye.year_name}}">{{ye.year_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <label>Part</label>
+                                        <select name="part" id="" class="form-control">
+                                            {% for part in parts %}
+                                            <option value="{{part.product_name}}" class="form-control">{{part.product_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <label>Brand</label>
+                                        <select name="part" id="" class="form-control">
+                                            {% for brand in brands %}
+                                            <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button class="uren-login_btn">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Uren's Login Register Area  End Here -->
 
         <!-- Begin Featured Categories Area -->
         <div class="featured-categories_area">
@@ -403,8 +457,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title_area">
-                            <span>Top New On This Week</span>
-                            <h3>New Arrivals Products</h3>
+                            <span>QUAP</span>
+                            <h3>Most Popular Products</h3>
                         </div>
                         <div class="product-slider uren-slick-slider slider-navigation_style-1 img-hover-effect_area" data-slick-options='{
                         "slidesToShow": 6,
@@ -1299,54 +1353,6 @@
             </div>
         </div>
         <!-- Uren's Blog Area End Here -->
-
-        <!-- Begin Uren's Login Register Area -->
-        <div class="uren-login-register_area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
-                        <!-- Login Form s-->
-                        <form action="#">
-                            <div class="login-form">
-                                <h4 class="login-title">Find A Part Now</h4>
-                                <div class="row">
-                                    <div class="col-md-12 col-12">
-                                        <label>Year</label>
-                                        <input type="number" placeholder="Year">
-                                    </div>
-                                    <div class="col-md-12 col-12">
-                                        <label>Email Address*</label>
-                                        <input type="email" placeholder="Email Address">
-                                    </div>
-                                    <div class="col-12 mb--20">
-                                        <label>Password</label>
-                                        <input type="password" placeholder="Password">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="remember_me">
-                                            <label for="remember_me">Remember me</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="forgotton-password_info">
-                                            <a href="#"> Forgotten pasward?</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button class="uren-login_btn">Login</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Uren's Login Register Area  End Here -->
 
     </div>
 

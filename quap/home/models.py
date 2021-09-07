@@ -21,3 +21,11 @@ class Blogs(models.Model):
 
     def __str__(self):
         return self.title[:100]
+
+class Products(models.Model):
+    product_name = models.CharField(max_length=200,null=True)
+
+class Brands(models.Model):
+    brand_name = models.CharField(max_length=200,null=True)
+class Years(models.Model):
+    year_name = models.IntegerField()

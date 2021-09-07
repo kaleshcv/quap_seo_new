@@ -25,9 +25,14 @@ def downloadCities(request):
 
 
 def indexPage(request):
+
     blogs = Blogs.objects.all()
-    data = {'blogs': blogs}
+    parts = Products.objects.all()
+    all_years = Years.objects.all()
+    brands = Brands.objects.all()
+    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands}
     return render(request,'index.html',data)
+
 def productsHomePage(request):
     return render(request,'shop-left-sidebar.html')
 
