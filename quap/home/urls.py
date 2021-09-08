@@ -29,4 +29,5 @@ urlpatterns = [
     path('subscribe-quap-emails',subscribeNow),
     path('get-instant-quote',contactWithPart),
     path('contact-us',contactUS),
+    path('contact-us/<str:part>',contactUsWithPartName),
 ]

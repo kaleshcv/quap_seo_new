@@ -95,3 +95,10 @@ def contactUS(request):
     data = {'parts': parts, 'all_years': all_years, 'brands': brands}
     return render(request,'contact-us.html',data)
 
+def contactUsWithPartName(request,part):
+    part = part
+    parts = Products.objects.all()
+    all_years = Years.objects.all()
+    brands = Brands.objects.all()
+    data = {'parts': parts, 'all_years': all_years, 'brands': brands,'part':part}
+    return render(request, 'contact-us-with-part.html', data)
