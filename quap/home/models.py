@@ -32,3 +32,11 @@ class Years(models.Model):
 
 class EmailSubscriptions(models.Model):
     email_id = models.EmailField(null=True)
+
+class Customer(models.Model):
+    year = models.IntegerField()
+    part = models.CharField(max_length=200,null=True)
+    brand = models.CharField(max_length=200,null=True)
+    customer_name = models.CharField(max_length=200,null=True)
+    customer_phone = models.CharField(max_length=200,null=True)
+    customer_email = models.CharField(max_length=200,null=True)

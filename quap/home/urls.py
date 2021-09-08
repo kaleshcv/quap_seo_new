@@ -27,5 +27,6 @@ urlpatterns = [
     path('select-city/<str:statename>',storeLocatorCounties),
     path('quap-all-blogs',blogHomePage),
     path('subscribe-quap-emails',subscribeNow),
-
+    path('get-instant-quote',contactWithPart),
+    path('contact-us',contactUS),
 ]

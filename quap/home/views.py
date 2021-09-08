@@ -81,6 +81,17 @@ def contactWithPart(request):
         customer_phone = request.POST['customer_phone']
         customer_email = request.POST['customer_email']
 
+        customer = Customer.objects.create(year = year,part = part, brand = brand,
+                   customer_name=customer_name,customer_phone=customer_phone,customer_email=customer_email)
+        customer.save()
+        return redirect('/')
 
 
+def contactUS(request):
+
+    parts = Products.objects.all()
+    all_years = Years.objects.all()
+    brands = Brands.objects.all()
+    data = {'parts': parts, 'all_years': all_years, 'brands': brands}
+    return render(request,'contact-us.html',data)
 

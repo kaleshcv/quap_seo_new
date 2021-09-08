@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% block title%}
+    Quick Used Auto Parts in USA - From Salvage & Junkyard, Online | QUAP
+{% endblock title %}
+{% block desc %}
+    <meta name="description" content="QUAP helps you order quality auto parts and accessories online, in USA at your doorstep Get access to 20 Million used auto parts and advice from experts.">
+{% endblock desc%}
+{% block main %}
+{% load static %}
+
+<div class="main-wrapper">
+        <!-- Begin Popular Search Area -->
+        <div class="popular-search_area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="popular-search">
+                            <label>Popular Search:</label>
+                            <a href="javascript:void(0)">Brakes & Rotors,</a>
+                            <a href="javascript:void(0)">Lighting,</a>
+                            <a href="javascript:void(0)">Performance,</a>
+                            <a href="javascript:void(0)">Wheels & Tires</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Begin Uren's Login Register Area -->
+        <div class="uren-login-register_area">
+            <div class="container-fluid">
+                <div class="section-title_area">
+                    <span>Quick Used Auto Parts</span>
+                    <h3>Find a Quick Quote Here</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+                        <!-- Login Form s-->
+                        <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="login-form">
+                                <h2>Find A Part Now</h2>
+                                <p>Get Instant Quote</p>
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label>Year</label>
+                                        <select name="year" id="" class="form-control">
+                                            {% for ye in all_years %}
+                                            <option value="{{ye.year_name}}">{{ye.year_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <label>Part</label>
+                                        <select name="part" id="" class="form-control">
+                                            {% for part in parts %}
+                                            <option value="{{part.product_name}}" class="form-control">{{part.product_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-12" style="margin-bottom:20px">
+                                        <label>Brand</label>
+                                        <select name="brand" id="" class="form-control">
+                                            {% for brand in brands %}
+                                            <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <label><b>Name *</b></label>
+                                        <input type="text" name="customer_name" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <label><b>Phone Number *</b></label>
+                                        <input type="tel" name="customer_phone" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <label>Email Address</label>
+                                        <input type="email" name="customer_email" class="form-control" required>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button class="uren-btn">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+                            <div class="banner-item img-hover_effect">
+                                <div class="banner-img-1"></div>
+                                <div class="banner-content">
+                                    <span class="offer">AFFORDABLE USED AUTO PARTS AT YOUR DOORSTEP</span>
+                                    <br><br>
+                                    <h4>Experience with convenience</h4>
+                                    <h3>Choose High Quality used OEM Parts</h3>
+                                    <br>
+                                    <p style="color: black;line-height: 35px;text-align: justify;font-size: 16px">Quick Used Auto Parts is your one-stop shop for replacement high quality used OEM automotive parts and accessories. We have served hundreds of thousands of customers across the world, working hand in hand to find high quality parts for your vehicle.
+
+Our registered office is in Princeton, NJ, with suppliers across America. <br>Our goal is to find you the correct part at an inexpensive price, close to your home or business. We can help you locate those hard-to-find parts. We ship your order directly to your home, business or to your mechanic, to help you get back on the road as quickly as possible.
+
+We understand that your car or truck can break down anytime, and that there is no holiday for your disabled vehicle.
+                                        <br><br> We staff sales professionals 365 days a year. Our sales department is available to help you place orders from 6 am to 9 pm CST, 7 days a week.
+
+                                        <br><span style="font-size: 30px;color: #e52e06">Call us Toll Free today, at 1-833-583-2590</span></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Begin Uren's Frequently Area -->
+        <div class="frequently-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="frequently-content">
+                            <div class="frequently-desc">
+                                <h3>Below are frequently asked questions, you may find the answer for yourself</h3>
+                                <p>We have a dedicated team of customer service agents available to assist you with your order. Due to the personal attention we provide each customer, we staff this department to be available to you throughout the day.
+
+                                    Hours of operation are from Monday to Sunday from 7am CST till 7pm CST. You can reach us directly by dialing us <span style="font-size: 16px;color: black">TOLL FREE on 1-833-583-2590</span></p>
+                            </div>
+                        </div>
+                        <!-- Begin Frequently Accordin -->
+                        <div class="frequently-accordion">
+                            <div id="accordion">
+                                <div class="card actives">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <a href="javascript:void(0)" class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                WHAT KIND OF SERVICES DO YOUR STORES PROVIDE?
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Due to COVID-19 some services are temporarily unavailable to keep your safety our #1 priority.
+
+QUAP Team Members are here to ensure you get the right parts - the first time. We offer a variety of free services at our stores.
+
+Stop by your local store for free engine code scanning on most OBD II vehicles!
+
+We cannot guarantee the problem can be resolved during the visit, but we are happy to refer you to one of our local professional technicians if more comprehensive diagnosis is needed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                HOW CAN I FIND A SPECIFIC PRODUCT FOR MY VEHICLE?
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                           Entering In Your Vehicle Year, Make, Model, and Engine
+In order to show you the most relevant products and information, we may ask you to enter in your vehicle's year, make, model, and engine type. You can store multiple vehicles in the Your Garage section of Your Account to easily switch between vehicles while shopping.
+                                            <br>
+                                            Choose In-Store Pickup or Ship To Home <br>
+Once you've added your items to your shopping cart, select In-Store Pickup or Ship to Home. You can choose to pickup some parts and have others shipped. You can even choose more than one store to pickup your parts from on the same order!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                HOW DO YOU CALCULATE SALES TAX?
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            QUAP charges sales tax on all orders as required by law.
+
+How is tax calculated?
+The sales tax amount is based on your shipping address and the current tax rates in that jurisdiction. Tax will be displayed during checkout before you pay for your order.
+
+Items with in-store pickup selected will be charged sales tax based on the location of the store.
+
+Note: Some states do not offer refunds on tax applied to core charges
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Frequently Accordin End Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+{% endblock %}
