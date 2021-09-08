@@ -26,5 +26,6 @@ urlpatterns = [
     #path('download-cities',downloadCities),
     path('select-city/<str:statename>',storeLocatorCounties),
     path('quap-all-blogs',blogHomePage),
+    path('subscribe-quap-emails',subscribeNow),
 
 ]

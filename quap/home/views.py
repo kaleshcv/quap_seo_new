@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import json,urllib,requests
 from .models import *
 # Create your views here.
@@ -62,3 +62,25 @@ def blogDetailsRightSidebar(request,pk):
     recent_blogs = Blogs.objects.all().order_by('-date_created')[:10]
     data = {'blog':blog,'recent_blogs':recent_blogs}
     return render(request,'blog-details-right-sidebar.html',data)
+
+def subscribeNow(request):
+    if request.method == 'POST':
+        email_id = request.POST['email']
+        email = EmailSubscriptions.objects.create(email_id = email_id)
+        email.save()
+        return redirect('/')
+    else:
+        return redirect('/')
+
+def contactWithPart(request):
+    if request.method == 'POST':
+        year = request.POST['year']
+        part = request.POST['part']
+        brand = request.POST['brand']
+        customer_name = request.POST['customer_name']
+        customer_phone = request.POST['customer_phone']
+        customer_email = request.POST['customer_email']
+
+
+
+

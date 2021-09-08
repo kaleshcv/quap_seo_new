@@ -29,3 +29,6 @@ class Brands(models.Model):
     brand_name = models.CharField(max_length=200,null=True)
 class Years(models.Model):
     year_name = models.IntegerField()
+
+class EmailSubscriptions(models.Model):
+    email_id = models.EmailField(null=True)

@@ -872,10 +872,11 @@
                                 <h3 class="title">Join Our Newsletter Now</h3>
                                 <p class="short-desc">Get E-mail updates about our latest shop and special offers.</p>
                                 <div class="newsletter-form_wrap">
-                                    <form action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletters-form validate" target="_blank" novalidate>
+                                    <form action="/subscribe-quap-emails" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletters-form validate" novalidate>
+                                        {% csrf_token %}
                                         <div id="mc_embed_signup_scroll">
                                             <div id="mc-form" class="mc-form subscribe-form">
-                                                <input id="mc-email" class="newsletter-input" type="email" autocomplete="off" placeholder="Enter your email" />
+                                                <input id="mc-email" class="newsletter-input" type="email" name="email" autocomplete="off" placeholder="Enter your email" />
                                                 <button class="newsletter-btn" id="mc-submit">Subscribe</button>
                                             </div>
                                         </div>
@@ -940,6 +941,8 @@
                             <div class="footer-widgets_area">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-6">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
                                         <div class="footer-widgets_title">
                                             <h3>Information</h3>
                                         </div>
@@ -978,17 +981,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-6">
-                                        <div class="footer-widgets_title">
-                                            <h3>My Account</h3>
-                                        </div>
-                                        <div class="footer-widgets">
-                                            <ul>
-                                                <li><a href="javascript:void(0)">My Account</a></li>
-                                                <li><a href="javascript:void(0)">Order History</a></li>
-                                                <li><a href="javascript:void(0)">Wish List</a></li>
-                                                <li><a href="javascript:void(0)">Newsletter</a></li>
-                                            </ul>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
