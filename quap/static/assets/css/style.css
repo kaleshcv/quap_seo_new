@@ -8495,11 +8495,18 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
 }
 
 .login-form {
-  background-color: #ffffff;
-  padding: 30px;
-  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+    background: linear-gradient(
+    0deg, rgb(23 20 22 / 98%), rgb(0 0 0 / 74%)), url(/static/assets/images/form-bg.jpg);
+    background-size: cover;
+    padding: 100px;
+    border-radius:10px;
 }
+.login-form h2{
+    color:white;
+    font-size:60px;
+}
+
 
 .login-form .login-title {
   font-size: 20px;

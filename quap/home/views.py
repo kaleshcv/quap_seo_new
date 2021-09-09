@@ -34,7 +34,11 @@ def indexPage(request):
     return render(request,'index.html',data)
 
 def productsHomePage(request):
-    return render(request,'shop-left-sidebar.html')
+    side_products = Products.objects.all()[:20]
+    products = Products.objects.exclude(product_image="products/default.jpg")
+    brands = Brands.objects.all()[:15]
+    data = {'products':products,'brands':brands,'side_products':side_products}
+    return render(request,'shop-left-sidebar.html',data)
 
 def productShopLocalArea(request):
     return render(request, 'shop-left-sidebar-from-counties.html')

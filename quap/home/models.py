@@ -24,6 +24,9 @@ class Blogs(models.Model):
 
 class Products(models.Model):
     product_name = models.CharField(max_length=200,null=True)
+    product_image = models.ImageField(upload_to="products/", default="products/default.jpg")
+    def __str__(self):
+        return self.product_name[:100]
 
 class Brands(models.Model):
     brand_name = models.CharField(max_length=200,null=True)
