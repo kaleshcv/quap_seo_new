@@ -79,6 +79,28 @@ p {
   line-height: 24px;
 }
 
+/*------CUstom-----------*/
+.why_us .col-lg-3 {
+    border: 1px solid lightgrey;
+    padding: 3%;
+    transition:.7s;
+}
+.why_us .col-lg-3:hover
+{
+     background: #ffc535;
+    cursor: pointer;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    border:1px solid #ffc535;
+}
+.why_us .col-lg-3:hover p{
+    color:black;
+}
+.why_us .col-lg-3:hover .fas{
+    color:black;
+    font-size:64px;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
