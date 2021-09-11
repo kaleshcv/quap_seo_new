@@ -84,6 +84,7 @@ p {
     border: 1px solid lightgrey;
     padding: 3%;
     transition:.7s;
+    margin:3%;
 }
 .why_us .col-lg-3:hover
 {
@@ -92,6 +93,7 @@ p {
     margin-top: -30px;
     margin-bottom: 30px;
     border:1px solid #ffc535;
+    margin:3%;
 }
 .why_us .col-lg-3:hover p{
     color:black;
