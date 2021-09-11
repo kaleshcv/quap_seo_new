@@ -30,4 +30,6 @@ urlpatterns = [
     path('get-instant-quote',contactWithPart),
     path('contact-us',contactUS),
     path('contact-us/<str:part>',contactUsWithPartName),
+    path('order-part-now/<str:part>',orderPartNow),
 ]
+

@@ -103,6 +103,27 @@ p {
     font-size:64px;
 }
 
+.order_steps .col-lg-3{
+    padding: 3%;
+    border: 1px solid #e64021;
+    border-radius: 10px;
+    background: #e64021;
+    margin: 2%;
+}
+
+.order_steps .col-lg-3 .fas{
+    font-size: 32px;
+    color: white;
+    margin: 10% 0;
+
+}
+
+.order_steps .col-lg-3 p{
+    color: white;
+    font-size: 16px;
+    letter-spacing: -1px;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;

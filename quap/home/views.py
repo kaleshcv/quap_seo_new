@@ -106,3 +106,11 @@ def contactUsWithPartName(request,part):
     brands = Brands.objects.all()
     data = {'parts': parts, 'all_years': all_years, 'brands': brands,'part':part}
     return render(request, 'contact-us-with-part.html', data)
+
+def orderPartNow(request,part):
+    part = part
+    parts = Products.objects.filter(product_name__contains = part)
+    all_years = Years.objects.all()
+    brands = Brands.objects.all()
+    data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part}
+    return render(request, 'contact-us-with-part-catefory.html', data)
