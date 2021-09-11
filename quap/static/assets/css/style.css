@@ -8521,7 +8521,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
     background: linear-gradient(
     0deg, rgb(23 20 22 / 98%), rgb(0 0 0 / 74%)), url(/static/assets/images/form-bg.jpg);
     background-size: cover;
-    padding: 100px;
+    padding: 10%;
     border-radius:10px;
 }
 .login-form h2{
