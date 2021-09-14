@@ -40,6 +40,18 @@
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
+
+    <!--------- Google Analytics --------------------------->
+    <meta name="google-site-verification" content="aMDujl1-l1Gc6aSLvdqmj01BKlnjK9k2L6i6Zve5LwU">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKRNJ1JMTZ">
+    </script>
+    <script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-MKRNJ1JMTZ');
+	</script>
 </head>
 
 <body class="template-color-1">
@@ -123,7 +135,7 @@
                                         <li class=""><a href="/store-locator"><i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 3px;font-size: 12px;color: #ffc400;"></i>Browse by Location</a></li>
                                         <li class=""><a href="#">About<i class="ion-ios-arrow-down"></i></a>
                                             <ul class="hm-dropdown">
-                                                <li><a href="/contact-us">About Us</a>
+                                                <li><a href="/about-us">About Us</a>
                                                 </li>
                                                 <li><a href="/contact-us">Contact</a>
                                                 </li>
@@ -172,43 +184,43 @@
                                     <ul>
                                         <li class="dropdown-holder active"><a href="/">Home</a>
                                         </li>
-                                        <li class="megamenu-holder "><a href="shop-left-sidebar.html">Shop <i class="ion-ios-arrow-down"></i></a>
+                                        <li class="megamenu-holder "><a href="/products-shops">Shop <i class="ion-ios-arrow-down"></i></a>
                                             <ul class="hm-megamenu">
                                                 <li><span class="megamenu-title">Engine Systems</span>
                                                     <ul>
-                                                        <li><a href="/contact-us/Engine-parts">Engine Parts</a></li>
-                                                        <li><a href="/contact-us/Pumps">Pumps</a></li>
-                                                        <li><a href="/contact-us/Engine-Fittings">Engine Fittings</a></li>
-                                                        <li><a href="/contact-us/Exhaust-Systems">Exhaust Systems</a></li>
-                                                        <li><a href="/contact-us/Cooling-Systems">Cooling Systems</a></li>
-                                                        <li><a href="/contact-us/Engines">Engines</a>
+                                                        <li><a href="/products-shops">Engine Parts</a></li>
+                                                        <li><a href="/products-shops">Pumps</a></li>
+                                                        <li><a href="/products-shops">Engine Fittings</a></li>
+                                                        <li><a href="/products-shops">Exhaust Systems</a></li>
+                                                        <li><a href="/products-shops">Cooling Systems</a></li>
+                                                        <li><a href="/products-shops">Engines</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Body Parts</span>
                                                     <ul>
-                                                        <li><a href="/contact-us/Cables">Cables</a></li>
-                                                        <li><a href="/contact-us/Wheels-Tires">Wheels & Tires</a>
+                                                        <li><a href="/products-shops">Cables</a></li>
+                                                        <li><a href="/products-shops">Wheels & Tires</a>
                                                         </li>
-                                                        <li><a href="/contact-us/Auto-Lamps">Auto Lamps</a>
+                                                        <li><a href="/products-shops">Auto Lamps</a>
                                                         </li>
-                                                        <li><a href="/contact-us/Car-Mirrors">Car Mirrors</a>
+                                                        <li><a href="/products-shops">Car Mirrors</a>
                                                         </li>
-                                                        <li><a href="/contact-us/Interior-Accessories">Interior Accessories</a></li>
-                                                        <li><a href="/contact-us/Exterior-Accessories">Exterior Accessories</a></li>
+                                                        <li><a href="/products-shops">Interior Accessories</a></li>
+                                                        <li><a href="/products-shops">Exterior Accessories</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Security and Safety</span>
                                                     <ul>
-                                                        <li><a href="/contact-us/Power-Windows">Power Windows</a></li>
-                                                        <li><a href="/contact-us/Central-PowerLocks">Central Power Locks</a></li>
-                                                        <li><a href="/contact-us/Alarm-Systems">Alarm Systems</a>
+                                                        <li><a href="/products-shops">Power Windows</a></li>
+                                                        <li><a href="/products-shops">Central Power Locks</a></li>
+                                                        <li><a href="/products-shops">Alarm Systems</a>
                                                         </li>
-                                                        <li><a href="/contact-us/Remote-Controllers">Remote Controllers</a>
+                                                        <li><a href="/products-shops">Remote Controllers</a>
                                                         </li>
-                                                        <li><a href="/contact-us/Anti-theft Devices">Anti-theft Devices</a>
+                                                        <li><a href="/products-shops">Anti-theft Devices</a>
                                                         </li>
-                                                        <li><a href="/contact-us/Transponder-Keys">Transponder Keys</a>
+                                                        <li><a href="/products-shops">Transponder Keys</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -219,14 +231,11 @@
                                         <li class=""><a href="/store-locator"><i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 3px;font-size: 12px;color: #ffc400;"></i>Browse by Location</a></li>
                                         <li class=""><a href="blog-left-sidebar.html">About<i class="ion-ios-arrow-down"></i></a>
                                             <ul class="hm-dropdown">
-                                                <li><a href="/contact-us">About Us</a>
+                                                <li><a href="/about-us">About Us</a>
                                                 </li>
-                                                <li><a href="/contact-us">Services</a>
+                                                <li><a href="/contact-us">Contact Us</a>
                                                 </li>
-                                                <li><a href="/contact-us">Contact</a>
-                                                </li>
-                                                <li><a href="/contact-us">Customer Care</a>
-                                                </li>
+
                                             </ul>
                                         </li>
                                     </ul>
@@ -235,7 +244,7 @@
                         </div>
                         <div class="col-sm-3 d-block d-lg-none">
                             <div class="header-logo_area header-sticky_logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="{% static 'assets/images/menu/logo/QUAP.svg' %}" alt="Uren's Logo" style="background: #ffc400;height: 53px;width: 206px;border-radius: 5px;padding: 4px;margin-top: -19px;">
                                 </a>
                             </div>
@@ -270,7 +279,7 @@
                     <div class="row">
                         <div class="custom-logo_col col-12">
                             <div class="header-logo_area">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="{% static 'assets/images/menu/logo/QUAP.svg' %}" alt="Uren's Logo" style="background: #ffc400;height: 53px;width: 206px;border-radius: 5px;padding: 4px;margin-top: -19px;">
                                 </a>
                             </div>

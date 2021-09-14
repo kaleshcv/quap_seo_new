@@ -114,3 +114,6 @@ def orderPartNow(request,part):
     brands = Brands.objects.all()
     data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part}
     return render(request, 'contact-us-with-part-catefory.html', data)
+
+def aboutUS(request):
+    return render(request,'about-us.html')
