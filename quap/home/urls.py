@@ -24,6 +24,8 @@ urlpatterns = [
     path('store-locator',storeLocator),
     path('blog-details-right-sidebar/<int:pk>',blogDetailsRightSidebar),
     #path('download-cities',downloadCities),
+    path('products/<str:statename>',displayCities),
+    path('products/<str:statename>/<str:cityname>',cityDetailswithProducts),
     path('select-city/<str:statename>',storeLocatorCounties),
     path('quap-all-blogs',blogHomePage),
     path('subscribe-quap-emails',subscribeNow),

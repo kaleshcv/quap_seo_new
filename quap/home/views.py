@@ -49,6 +49,22 @@ def storeLocator(request):
     data={'locations':locations}
     return render(request,'store-locator-home-page.html',data)
 
+def displayCities(request,statename):
+    state = statename
+    cities = StateCityListNew.objects.filter(state = statename)
+    data = {'cities':cities,'state':state}
+    return render(request, 'store-locator-city-page.html', data)
+
+def cityDetailswithProducts(request,statename,cityname):
+    state = statename
+    city = cityname
+    city_details = StateCityListNew.objects.get(county_or_city = city)
+    products = Products.objects.exclude(product_image="products/default.jpg")
+    side_products = Products.objects.all()[:20]
+    data = {'city_details':city_details,'state':state,'city':city,'products':products,'side_products':side_products}
+    return render(request,'city-product-page.html',data)
+
+
 def storeLocatorCounties(request,statename):
     statename = statename
     location = StateCityList.objects.filter(state=statename)

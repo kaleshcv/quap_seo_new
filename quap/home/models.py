@@ -9,6 +9,17 @@ class StateCityList(models.Model):
     countyCode = models.CharField(max_length=10)
     countyName = models.CharField(max_length=100)
 
+class StateCityListNew(models.Model):
+    state = models.CharField(max_length=100)
+    stateAbbreviation = models.CharField(max_length=10)
+    county_or_city = models.CharField(max_length=100)
+    img = models.ImageField(upload_to="cities/",default="cities/default.jpg")
+    content = RichTextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.county_or_city
+
+
 class Blogs(models.Model):
     date_created = models.DateField()
     main_image = models.ImageField(upload_to="images/",default="images/pexels-arnie-watkins-3156482.jpg")

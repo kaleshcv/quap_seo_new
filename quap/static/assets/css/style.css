@@ -137,6 +137,38 @@ p {
     letter-spacing: 1px;
 }
 
+.welcome_sub .col-lg-5{
+    margin: 3%;
+    padding: 3%;
+    border: 1px solid lightgray;
+    transition:.7s;
+}
+
+.welcome_sub .col-lg-5:hover
+    {
+     background: #ffc535;
+    cursor: pointer;
+    border:1px solid #ffc535;
+    margin:3%;
+}
+
+.welcome_sub .col-lg-5 h5
+{
+    font-size:26px;
+    transition:.7s;
+}
+
+.welcome_sub .col-lg-5:hover h5
+{
+    font-size:36px;
+}
+
+.order_steps p{
+    font-size: 18px;
+    color: #303030;
+    line-height: 34px;
+}
+
 .faq p{
 
     color: black;
