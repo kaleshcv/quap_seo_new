@@ -15,6 +15,15 @@ class StateCityListNew(models.Model):
     county_or_city = models.CharField(max_length=100)
     img = models.ImageField(upload_to="cities/",default="cities/default.jpg")
     content = RichTextField(blank=True, null=True)
+    faq_q_1 = models.CharField(max_length=500,null=True)
+    faq_ans_1 = models.TextField(null=True)
+    faq_q_2 = models.CharField(max_length=500, null=True)
+    faq_ans_2 = models.TextField(null=True)
+    faq_q_3 = models.CharField(max_length=500, null=True)
+    faq_ans_3 = models.TextField(null=True)
+
+
+
 
     def __str__(self):
         return self.county_or_city

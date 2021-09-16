@@ -137,30 +137,29 @@ p {
     letter-spacing: 1px;
 }
 
-.welcome_sub .col-lg-5{
-    margin: 3%;
-    padding: 3%;
-    border: 1px solid lightgray;
+.welcome_sub .col-lg-4{
+
+    padding: 2%;
+
     transition:.7s;
 }
 
-.welcome_sub .col-lg-5:hover
+.welcome_sub .col-lg-4:hover
     {
      background: #ffc535;
     cursor: pointer;
-    border:1px solid #ffc535;
-    margin:3%;
+
 }
 
-.welcome_sub .col-lg-5 h5
+.welcome_sub .col-lg-4 h5
 {
-    font-size:26px;
+    font-size:22px;
     transition:.7s;
 }
 
-.welcome_sub .col-lg-5:hover h5
+.welcome_sub .col-lg-4:hover h5
 {
-    font-size:36px;
+    font-size:24px;
 }
 
 .order_steps p{
