@@ -3,19 +3,6 @@
 {% load static %}
 
     <div class="main-wrapper">
-        <!-- Begin Loading Area -->
-        <div class="loading">
-            <div class="text-center middle">
-                <div class="lds-ellipsis">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-        <!-- Loading Area End Here -->
-
         <!-- Begin Uren's Breadcrumb Area -->
         <div class="breadcrumb-area">
             <div class="container">
@@ -30,23 +17,24 @@
                 </div>
             </div>
         </div>
+        <div style="margin-top:50px">
+            <h1 class="main_h1 text-center">Used Auto Parts in {{city}}, {{state}}</h1>
+        </div>
         <!-- Uren's Breadcrumb Area End Here -->
         <div class="container-fluid" style="margin-top:5%">
             <div class="row">
                 <div class="col-lg-6">
                     <div>
                         <img src="{{city_details.img.url}}" alt="">
-
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div style="padding:3%">
+                    <div style="padding:1%">
                         {{city_details.content|safe}}
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Begin Uren's Shop Left Sidebar Area -->
         <div class="shop-content_wrapper">
             <div class="container-fluid">
@@ -73,7 +61,7 @@
                     </div>
                     <div class="col-lg-9 col-md-7 order-1 order-lg-2 order-md-2">
                         <div class="section-title_area">
-                            <h3>Popular Used Car Parts in {{city}}, {{state}}</h3>
+                            <h2 class="main_h1">Popular Used Car Parts in {{city}}, {{state}}</h2>
                         </div>
                         <div class="shop-toolbar">
                             <div class="product-view-mode">

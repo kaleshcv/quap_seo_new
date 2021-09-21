@@ -168,6 +168,17 @@ p {
     line-height: 34px;
 }
 
+.main_h1 {
+    letter-spacing: 3px;
+    color: #0c2a5c;
+    margin: 20px 0px;
+}
+.cities_a {
+    font-size: 20px;
+    color: #0c2a5c;
+    font-weight: 600;
+}
+
 .faq p{
 
     color: black;

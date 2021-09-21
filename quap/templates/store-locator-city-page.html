@@ -13,27 +13,36 @@ Quick Used Auto Parts in {{state}} - From Salvage & Junkyard | QUAP
                     <h2>Browse Cities</h2>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li class="active">Products</li>
+                        <li class="active">Used Auto Parts</li>
                         <li class="active">{{state}}</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Uren's Breadcrumb Area End Here -->
+        <div class="container-fluid" style="margin-top:3%">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <h1 class="main_h1 text-center">Used Auto Parts in {{state}}</h1>
+                    </div>
+                    <div>
+                        <p style="color: black;font-size: 18px;text-align: justify">QUAP brings you the finest used auto parts in Texas from salvage yards in Texas and all over the US. We ensure that you don’t burn a hole in your pocket when you buy our certified OEM parts. We bring you the choicest used auto parts for your Ford F150, Nissan Altima, Toyota Camry, Chevrolet Silverado, and more! And guess what! We test and certify these parts before dispatch. We deliver to every nook and corner of Texas and all over the US. You also get 90 days from the day of delivery to decide whether the part suits your needs. Our customer services and technical help are available to all of Texas. Order now!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Begin Uren's Blog Left Sidebar Area -->
-        <div class="uren-blog_area grid-view_area blog-with_sidebar">
-            <div class="container-fluid">
+
+            <div class="container" style="padding-top:50px;padding-bottom:100px">
                 <div class="row">
                     <div class="col-lg-12 order-lg-2 order-1">
-
-                        <div style="padding-top:30px">
-
-                        </div>
-                        <div class="row" style="padding:30px">
+                        <div class="row">
                             {% for city in cities %}
                             <div class="col-lg-2">
-                                <p><a href="/products/{{state}}/{{city.county_or_city}}">{{city.county_or_city}}</a></p>
+                                <p><a href="/Used-Auto-Parts/{{state}}/{{city.county_or_city}}" class="cities_a">{{city.county_or_city}}</a></p>
                             </div>
                             {% endfor %}
                         </div>
@@ -61,7 +70,7 @@ Quick Used Auto Parts in {{state}} - From Salvage & Junkyard | QUAP
                     </div>
                 </div>
             </div>
-        </div>
+
         <!-- Uren's Blog Left Sidebar Area End Here -->
 
 {% endblock %}

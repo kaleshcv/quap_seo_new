@@ -22,9 +22,6 @@ class StateCityListNew(models.Model):
     faq_q_3 = models.CharField(max_length=500, null=True)
     faq_ans_3 = models.TextField(null=True)
 
-
-
-
     def __str__(self):
         return self.county_or_city
 
