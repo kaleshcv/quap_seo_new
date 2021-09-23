@@ -139,10 +139,12 @@ p {
 }
 
 .welcome_sub .col-lg-3{
-
-    padding: 2%;
-
-    transition:.7s;
+    padding: 40px 30px;
+    transition: .7s;
+    box-shadow: 1px 1px 10px #dddddd;
+    background: #e6e6e638;
+    border: 1px solid white;
+    border-radius: 15px;
 }
 
 .welcome_sub .col-lg-3:hover
@@ -157,6 +159,7 @@ p {
     font-size:22px;
     transition:.7s;
     color: #e52e06;
+    line-height: 44px;
 }
 
 .welcome_sub .col-lg-3:hover h5
@@ -2473,7 +2476,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
           justify-content: space-evenly;
 }
 
-.category-menu .category-heading > h2 {
+.category-menu .category-heading > h4 {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -2494,7 +2497,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
           justify-content: center;
 }
 
-.category-menu .category-heading > h2:before {
+.category-menu .category-heading > h4:before {
   content: "\f394";
   font-family: 'Ionicons';
   position: absolute;
@@ -2503,7 +2506,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
   font-size: 40px;
 }
 
-.category-menu .category-heading > h2:after {
+.category-menu .category-heading > h4:after {
   content: "\f3d0";
   font-family: 'Ionicons';
   position: absolute;
@@ -2511,13 +2514,13 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
   font-size: 25px;
 }
 
-.category-menu .category-heading > h2 > span {
+.category-menu .category-heading > h4 > span {
   text-transform: uppercase;
   line-height: 14px;
   line-height: 18px;
 }
 
-.category-menu .category-heading > h2 > span:first-child {
+.category-menu .category-heading > h4 > span:first-child {
   font-size: 14px;
 }
 
@@ -6042,7 +6045,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .header-main_area-2 .header-top_area .category-menu .category-heading > h2.categories-toggle {
+  .header-main_area-2 .header-top_area .category-menu .category-heading > h4.categories-toggle {
     font-size: 13px;
   }
 }
