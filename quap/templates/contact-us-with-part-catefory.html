@@ -11,7 +11,7 @@
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Get Quote</h2>
+                    <h2>Find a Quick Quote Here</h2>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li class="active">{{part}}</li>
@@ -25,43 +25,8 @@
         <!-- Begin Uren's Login Register Area -->
         <div class="uren-login-register_area">
             <div class="container-fluid">
-                <div class="section-title_area">
-                    <span>Quick Used Auto Parts</span>
-                    <h3>Find a Quick Quote Here</h3>
-                </div>
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                            <div class="banner-item img-hover_effect">
-                                <div class="banner-img-1"></div>
-                                <div class="banner-content" style="padding-top:10%">
-                                    <div>
-                                        <h3>How it works? </h3>
-                                        <div class="row order_steps" style="margin-top:3%;margin-bottom:5%">
-                                            <div class="col-lg-3">
-                                                <h6 style="color:white;font-size:22px">Step 1</h6>
-                                                <i class="fas fa-arrow-circle-right"></i>
-                                                <p>Fill the Form. Make sure you fill in the right contact information.</p>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h6 style="color:white;font-size:22px">Step 2</h6>
-                                                <i class="fas fa-arrow-circle-right"></i>
-                                                <p>We will contact you as soon as possible with a part & a quote</p>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h6 style="color:white;font-size:22px">Step 3</h6>
-                                                <i class="fas fa-arrow-circle-right"></i>
-                                                <p>The part will be delivered to your doorstep.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p style="color: black;line-height: 35px;text-align: justify;font-size: 16px">Our sales team will be more than happy to place an order any time. Contact us on this toll free number <span><a
-                                            href="tel:18335832590" style="color: #e64021;font-size: 20px;font-weight: 600;">1-833-583-2590</a></span>, today!</p>
-                                </div>
-                            </div>
-
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" id="Form">
                         <!-- Login Form s-->
                         <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
@@ -113,6 +78,38 @@
                             </div>
                         </form>
                     </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+                            <div class="banner-item img-hover_effect">
+                                <div class="banner-img-1"></div>
+                                <div class="banner-content" style="padding-top:10%">
+                                    <div>
+                                        <h3>How it works? </h3>
+                                        <div class="row order_steps" style="margin-top:3%;margin-bottom:5%">
+                                            <div class="col-lg-3">
+                                                <h6 style="color:white;font-size:22px">Step 1</h6>
+                                                <i class="fas fa-arrow-circle-right"></i>
+                                                <p>Fill the Form. Make sure you fill in the right contact information.</p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h6 style="color:white;font-size:22px">Step 2</h6>
+                                                <i class="fas fa-arrow-circle-right"></i>
+                                                <p>We will contact you as soon as possible with a part & a quote</p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h6 style="color:white;font-size:22px">Step 3</h6>
+                                                <i class="fas fa-arrow-circle-right"></i>
+                                                <p>The part will be delivered to your doorstep.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p style="color: black;line-height: 35px;text-align: justify;font-size: 16px">Our sales team will be more than happy to place an order any time. Contact us on this toll free number <span><a
+                                            href="tel:18335832590" style="color: #e64021;font-size: 20px;font-weight: 600;">1-833-583-2590</a></span>, today!</p>
+                                </div>
+                            </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>

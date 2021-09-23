@@ -54,9 +54,8 @@ INDEX:
 /*  00 - Base - Typography
 /*----------------------------------------*/
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Mulish', sans-serif;
   color: #999999;
-  font-size: 14px;
   line-height: 24px;
 }
 
@@ -66,17 +65,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Mulish', sans-serif;
   color: #333333;
   line-height: 1;
   font-weight: 700;
 }
 
 p {
-  font-family: "Work Sans", sans-serif;
-  color: #999999;
-  font-size: 14px;
-  line-height: 24px;
+  font-family: 'Mulish', sans-serif;
+  color: #3c3c3c;
+  font-size: 19px !important;
+  line-height: 30px;
+  letter-spacing: 1px;
+
 }
 
 /*------CUstom-----------*/
@@ -137,35 +138,45 @@ p {
     letter-spacing: 1px;
 }
 
-.welcome_sub .col-lg-4{
+.welcome_sub .col-lg-3{
 
     padding: 2%;
 
     transition:.7s;
 }
 
-.welcome_sub .col-lg-4:hover
+.welcome_sub .col-lg-3:hover
     {
      background: #ffc535;
     cursor: pointer;
 
 }
 
-.welcome_sub .col-lg-4 h5
+.welcome_sub .col-lg-3 h5
 {
     font-size:22px;
     transition:.7s;
+    color: #e52e06;
 }
 
-.welcome_sub .col-lg-4:hover h5
+.welcome_sub .col-lg-3:hover h5
 {
     font-size:24px;
 }
 
 .order_steps p{
-    font-size: 18px;
+    font-size: 19px;
     color: #303030;
     line-height: 34px;
+}
+
+.product-item li a {
+     font-size: 19px;
+     color: #e52e06;
+}
+.slide-content_area h3 a {
+    font-size:20px;
+    color: #0c2a5c;
 }
 
 .main_h1 {
@@ -184,18 +195,20 @@ p {
 
 .faq p{
 
-    color: black;
-    line-height: 35px;
-    text-align: justify;
-    font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  color: #3c3c3c;
+  font-size: 19px !important;
+  line-height: 30px;
+  letter-spacing: 1px;
 }
 
 .card-body
 {
-    color: black;
-    line-height: 35px;
-    text-align: justify;
-    font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  color: #3c3c3c;
+  font-size: 18px !important;
+  line-height: 30px;
+  letter-spacing: 1px;
 }
 
 
@@ -5505,7 +5518,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
   }
   .header-right_area > ul > li.mobile-menu_wrap > a {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 40px;
   }
 }
 
