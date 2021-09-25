@@ -1,1 +1,2 @@
-Test
+User-agent: *
+Allow: /
