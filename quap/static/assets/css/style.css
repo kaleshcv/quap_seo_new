@@ -5237,6 +5237,8 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
   padding: 23px 0;
   text-transform: uppercase;
   position: relative;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 .header-top_area .main-menu_area > nav > ul > li > a > i {
