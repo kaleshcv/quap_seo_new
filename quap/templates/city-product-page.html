@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
+
+{% block title%}
+Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
+{% endblock title %}
+
+{% block desc %}
+    <meta name="description" content="QUAP brings you quality used auto parts in {{city}}, {{state}}. We bring you both certified salvage yard parts and expert assistance in all areas of {{city}}">
+{% endblock desc%}
+
 {% block main %}
 {% load static %}
 
@@ -35,7 +44,6 @@
                         <p style="font-size: 18px;color: #0c2a5c;text-align: justify;">{{city_details.content}}</p>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- Begin Uren's Shop Left Sidebar Area -->
