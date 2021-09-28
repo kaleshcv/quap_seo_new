@@ -42,6 +42,7 @@ class Blogs(models.Model):
 class Products(models.Model):
     product_name = models.CharField(max_length=200,null=True)
     product_image = models.ImageField(upload_to="products/", default="products/default.jpg")
+
     def __str__(self):
         return self.product_name[:100]
 
@@ -60,3 +61,11 @@ class Customer(models.Model):
     customer_name = models.CharField(max_length=200,null=True)
     customer_phone = models.CharField(max_length=200,null=True)
     customer_email = models.CharField(max_length=200,null=True)
+
+class State(models.Model):
+    name = models.CharField(max_length=100)
+    short_name = models.CharField(max_length=10)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name

@@ -46,6 +46,7 @@ def productShopLocalArea(request):
 def storeLocator(request):
 
     locations = StateCityList.objects.values_list('state', flat=True).distinct()
+    locations = State.objects.all()
     data={'locations':locations}
     return render(request,'store-locator-home-page.html',data)
 
@@ -54,7 +55,8 @@ def displayCities(request,statename):
     cities = StateCityListNew.objects.filter(state = statename)
     products = Products.objects.exclude(product_image="products/default.jpg")
     side_products = Products.objects.all()[:20]
-    data = {'cities':cities,'state':state,'products':products,'side_products':side_products}
+    desc = State.objects.get(name = statename)
+    data = {'cities':cities,'state':state,'products':products,'side_products':side_products,'desc':desc}
     return render(request, 'store-locator-city-page.html', data)
 
 def cityDetailswithProducts(request,statename,cityname):
@@ -135,3 +137,14 @@ def orderPartNow(request,part):
 
 def aboutUS(request):
     return render(request,'about-us.html')
+
+def changeProductName(request):
+    p = Products.objects.all()[:10]
+    for i in p:
+
+        print(i.product_name)
+        new = i.product_name.lower()
+        new = new.replace(' ','-')
+        new = new.replace('/', '')
+        print(new)
+

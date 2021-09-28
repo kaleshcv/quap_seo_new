@@ -8,4 +8,4 @@ admin.site.register(Years)
 admin.site.register(EmailSubscriptions)
 admin.site.register(Customer)
 admin.site.register(StateCityListNew)
-
+admin.site.register(State)

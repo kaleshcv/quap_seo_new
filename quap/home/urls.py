@@ -37,5 +37,8 @@ urlpatterns = [
     path('contact-us/<str:part>',contactUsWithPartName),
     path('order-part-now/<str:part>',orderPartNow),
     path('about-us',aboutUS),
+
+    # Test
+    path('cp',changeProductName),
 ]
 
