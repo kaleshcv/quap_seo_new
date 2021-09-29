@@ -25,12 +25,12 @@ def downloadCities(request):
 
 
 def indexPage(request):
-
+    url_ob = request.get_host()
     blogs = Blogs.objects.all()
     parts = Products.objects.all()
     all_years = Years.objects.all()
     brands = Brands.objects.all()
-    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands}
+    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob}
     return render(request,'index.html',data)
 
 def productsHomePage(request):

@@ -18,8 +18,7 @@ Used Auto Parts in {{state}}, USA- From Salvage & Junkyard| QUAP
                 <div class="breadcrumb-content">
                     <h2>Browse Cities</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Used Auto Parts</li>
+                        <li><a href="/">Home</a></li>
                         <li class="active">{{state}}</li>
                     </ul>
                 </div>
@@ -48,7 +47,7 @@ Used Auto Parts in {{state}}, USA- From Salvage & Junkyard| QUAP
                         <div class="row">
                             {% for city in cities %}
                             <div class="col-lg-2">
-                                <p><a href="/Used-Auto-Parts/{{state}}/{{city.county_or_city}}" class="cities_a">{{city.county_or_city}}</a></p>
+                                <p><a href="/used-auto-parts/{{state}}/{{city.county_or_city}}" class="cities_a">{{city.county_or_city}}</a></p>
                             </div>
                             {% endfor %}
                         </div>
