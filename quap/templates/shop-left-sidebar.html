@@ -88,7 +88,7 @@
                                     <div class="inner-slide">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="/order-part-now/{{p.product_name}}">
+                                                <a>
                                                     <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 100%; height: 200px">
                                                     <img class="secondary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 100%; height: 200px">
                                                 </a>
@@ -96,12 +96,11 @@
                                                     <span class="sticker">New</span>
                                                 </div>
                                                 <div class="add-actions">
-                                                    <ul>
-                                                        <li><a class="uren-add_cart" href="/order-part-now/{{p.product_name}}" data-toggle="tooltip" data-placement="top" title="Get a Quote"><i
-                                                            class="ion-bag"></i></a>
-                                                        </li>
-
-                                                    </ul>
+                                                    <form action="/used-auto-parts-us/{{p.product_name|slugify}}" method="POST" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="pid" value="{{p.id}}">
+                                                        <button type="submit" class="btn btn-secondary">Get Quote</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                             <div class="product-content">
@@ -116,7 +115,7 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <h6><a class="product-name" href="/order-part-now/{{p.product_name}}">{{p.product_name}}</a></h6>
+                                                    <h6><a class="product-name">{{p.product_name}}</a></h6>
                                                     <div class="price-box">
                                                     </div>
                                                 </div>

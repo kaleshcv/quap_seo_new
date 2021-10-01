@@ -214,6 +214,25 @@ p {
   letter-spacing: 1px;
 }
 
+.product-specs{
+    margin: 20px 1px;
+    background: #ececec7a;
+    padding: 20px;
+    box-shadow: 1px 1px 10px #d3d3d385;
+}
+
+.product-specs h6{
+    font-size: 20px;
+    font-weight: 100;
+    margin: auto;
+    color:red;
+}
+
+.product-specs h6 span{
+    margin-left: 10px;
+    color: #0c2a5cc7;
+    }
+
 
 
 input[type=number]::-webkit-inner-spin-button,

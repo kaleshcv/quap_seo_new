@@ -30,7 +30,8 @@ def indexPage(request):
     parts = Products.objects.all()
     all_years = Years.objects.all()
     brands = Brands.objects.all()
-    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob}
+    products = Products.objects.exclude(product_image="products/default.jpg")
+    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob,'products':products}
     return render(request,'index.html',data)
 
 def productsHomePage(request):
@@ -39,6 +40,15 @@ def productsHomePage(request):
     brands = Brands.objects.all()[:15]
     data = {'products':products,'brands':brands,'side_products':side_products}
     return render(request,'shop-left-sidebar.html',data)
+
+def singleProductPage(request,pname):
+    if request.method == 'POST':
+        pid = request.POST['pid']
+        product = Products.objects.get(id=pid)
+        data = {'product':product}
+        return render(request,'single-product.html',data)
+    else:
+        pass
 
 def productShopLocalArea(request):
     return render(request, 'shop-left-sidebar-from-counties.html')

@@ -33,15 +33,15 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
         <div class="container-fluid" style="margin-top:5%">
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5">
-                    <div style="padding:20px">
-                        <img src="{{city_details.img.url}}" alt="" style="height: 350px;width: 520px;box-shadow: 10px 10px 20px lightgrey;">
+                <div class="col-lg-4">
+                    <div>
+                        <img src="{{city_details.img.url}}" alt="" style="height: 350px;width: 520px;box-shadow: 10px 10px 20px lightgrey;margin-top:25px;">
                     </div>
                 </div>
 
                 <div class="col-lg-5">
-                    <div style="padding:20px;">
-                        <p style="font-size: 18px;color: #0c2a5c;text-align: justify;">{{city_details.content}}</p>
+                    <div>
+                        <p style="font-size: 18px;color: #0c2a5c;text-align: justify;">{{city_details.content|safe}}</p>
                     </div>
                 </div>
             </div>
