@@ -32,21 +32,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="uren-blog-sidebar">
-                                <h4 class="uren-blog-sidebar-title">Quick Search</h4>
-                                <ul class="uren-tags_list">
-                                    <li><a href="javascript:void(0)">CA</a></li>
-                                    <li><a href="javascript:void(0)">NY</a></li>
-                                    <li><a href="javascript:void(0)">TX</a></li>
-                                    <li><a href="javascript:void(0)">WA</a></li>
-                                    <li><a href="javascript:void(0)">PA</a></li>
-                                    <li><a href="javascript:void(0)">TN</a></li>
-                                    <li><a href="javascript:void(0)">FL</a></li>
-                                    <li><a href="javascript:void(0)">CO</a></li>
-                                    <li><a href="javascript:void(0)">AR</a></li>
-                                    <li><a href="javascript:void(0)">AZ</a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-9 order-lg-2 order-1">
@@ -54,7 +39,7 @@
                         <div class="row" style="padding:30px">
                             {% for loc in locations %}
                             <div class="col-xl-2 col-lg-2">
-                                <p><a href="/used-auto-parts/{{loc}}" style="font-size: 20px;color: #0c2a5c;font-weight: 600;">{{loc}}</a></p>
+                                <p><a href="/used-auto-parts/{{loc}}" class="shadow">{{loc}}</a></p>
                             </div>
                             {% endfor %}
                         </div>

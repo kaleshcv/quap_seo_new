@@ -30,22 +30,40 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
             <h1 class="main_h1 text-center">Used Auto Parts in {{city}}, {{state}}</h1>
         </div>
         <!-- Uren's Breadcrumb Area End Here -->
-        <div class="container-fluid" style="margin-top:5%">
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4">
-                    <div>
-                        <img src="{{city_details.img.url}}" alt="" style="height: 350px;width: 520px;box-shadow: 10px 10px 20px lightgrey;margin-top:25px;">
-                    </div>
-                </div>
+        <!-- Begin Uren's Banner Area -->
+        <div class="uren-banner_area ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="banner-item img-hover_effect">
+                            <div class="banner-img-1"></div>
+                            <div class="banner-content">
 
-                <div class="col-lg-5">
-                    <div>
-                        <p style="font-size: 18px;color: #0c2a5c;text-align: justify;">{{city_details.content|safe}}</p>
+                                <i class="fa fa-truck fas" style="transition:.7s;"></i>
+                                <p style="max-width:95%;color:#ffc400;">{{city_details.content_sentence_1}}</p>
+                                <br>
+                                <i class="fa fa-truck fas" style="transition:.7s;"></i>
+                                <p style="max-width:95%;color:#fff;">{{city_details.content_sentence_2}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="banner-item img-hover_effect">
+                            <div class="banner-img-1 banner-img-2"> </div>
+                            <div class="banner-content">
+                                <i class="fa fa-truck fas" style="transition:.7s;"></i>
+                                <p style="max-width:95%;color:#fff;">{{city_details.content_sentence_3}}</p>
+                                <br>
+                                <i class="fa fa-truck fas" style="transition:.7s;"></i>
+                                <p style="max-width:95%;color:#ffc400;">{{city_details.content_sentence_4}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Uren's Banner Area End Here -->
+
         <!-- Begin Uren's Shop Left Sidebar Area -->
         <div class="shop-content_wrapper">
             <div class="container-fluid">

@@ -187,11 +187,7 @@ p {
     color: #0c2a5c;
     margin: 20px 0px;
 }
-.cities_a {
-    font-size: 20px;
-    color: #0c2a5c;
-    font-weight: 600;
-}
+
 .logo_img{
     width:125px;
 }
@@ -233,7 +229,17 @@ p {
     color: #0c2a5cc7;
     }
 
-
+.shadow {
+    font-size: 20px;
+    color: #0c2a5c;
+    font-weight: 600;
+    padding: 10px 30px;
+    border: 1px solid white;
+    box-shadow: 2px 2px 10px lightgrey;
+}
+.banner-content .fa {
+    font-size:18px;
+}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {

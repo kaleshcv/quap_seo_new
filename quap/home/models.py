@@ -13,9 +13,10 @@ class StateCityListNew(models.Model):
     state = models.CharField(max_length=100)
     stateAbbreviation = models.CharField(max_length=10)
     county_or_city = models.CharField(max_length=100)
-    img = models.ImageField(upload_to="cities/",default="cities/default.jpg")
-    content = RichTextField(blank=True,null=True)
-
+    content_sentence_1 = models.TextField(max_length=160,null=True)
+    content_sentence_2 = models.TextField(max_length=160,null=True)
+    content_sentence_3 = models.TextField(max_length=160,null=True)
+    content_sentence_4 = models.TextField(max_length=160,null=True)
     faq_q_1 = models.CharField(max_length=500,null=True)
     faq_ans_1 = models.TextField(null=True)
     faq_q_2 = models.CharField(max_length=500, null=True)
