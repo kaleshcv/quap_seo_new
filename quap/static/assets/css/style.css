@@ -244,6 +244,19 @@ p {
     font-size:18px;
 }
 
+.about_category .col-lg-6 {
+    background: #d3d3d324;border: 5px solid white;
+}
+.about_category .fas{
+    font-size: 64px;padding: 10px;
+}
+.about_category h5{
+     color: #ffc400;font-size: 24px;padding: 15px;
+}
+.about_category p{
+    padding: 20px;text-align: justify;
+    }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
