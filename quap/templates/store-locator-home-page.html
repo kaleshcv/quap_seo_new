@@ -21,27 +21,19 @@
         <div class="uren-blog_area grid-view_area blog-with_sidebar">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 order-lg-1 order-2">
-                        <div class="uren-blog-sidebar-wrapper">
-                            <div class="uren-blog-sidebar">
-                                <h4 class="uren-blog-sidebar-title">Search Stores</h4>
-                                <div class="search-form_area">
-                                    <form class="search-form" action="javascript:void(0)">
-                                        <input type="text" class="search-field" placeholder="search here">
-                                        <button type="submit" class="search-btn"><i class="ion-ios-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 order-lg-2 order-1">
-                        <h2 class="text-center">BROWSE LOCATIONS BY STATE</h2>
-                        <div class="row" style="padding:30px">
-                            {% for loc in locations %}
-                            <div class="col-xl-2 col-lg-2">
-                                <p><a href="/used-auto-parts/{{loc}}" class="shadow">{{loc}}</a></p>
-                            </div>
-                            {% endfor %}
+                    <div class="col-lg-12 order-lg-2 order-1">
+                        <h2 class="text-center" style="margin-bottom:20px;">BROWSE LOCATIONS BY STATE</h2>
+                        <div class="row" style="padding:10px">
+                            <center>
+                            <ul class="nav justify-content-center">
+                              {% for loc in locations %}
+                              <li class="nav nav-fill">
+                                <a class="nav-link shadow" aria-current="page" href="/used-auto-parts/{{loc}}">{{loc}}</a>
+                              </li>
+                                {% endfor %}
+                            </ul>
+
+                            </center>
                         </div>
                         <!--<div class="row blog-item_wrap">
                             <div class="col-xl-4 col-lg-6">

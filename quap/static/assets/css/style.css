@@ -236,6 +236,9 @@ p {
     padding: 10px 30px;
     border: 1px solid white;
     box-shadow: 2px 2px 10px lightgrey;
+    width: 300px;
+    margin: 2%;
+    font-size: 16px;
 }
 .banner-content .fa {
     font-size:18px;
