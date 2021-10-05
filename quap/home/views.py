@@ -90,7 +90,7 @@ def blogHomePage(request):
     data = {'blogs':blogs}
     return render(request,'blog-list-fullwidth.html',data)
 
-def blogDetailsRightSidebar(request,pk):
+def blogDetailsRightSidebar(request,title,pk):
     pk=pk
     blog = Blogs.objects.get(id=pk)
     recent_blogs = Blogs.objects.all().order_by('-date_created')[:10]

@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('products-shops-local',productShopLocalArea),
     path('states',storeLocator),
-    path('blogs/<int:pk>',blogDetailsRightSidebar),
+    path('blogs/<str:title>/<int:pk>',blogDetailsRightSidebar),
     #path('download-cities',downloadCities),
     path('used-auto-parts/<str:statename>',displayCities),
     path('used-auto-parts/<str:statename>/<str:cityname>',cityDetailswithProducts),
