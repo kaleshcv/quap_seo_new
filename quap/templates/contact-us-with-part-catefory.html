@@ -20,6 +20,15 @@
             </div>
         </div>
         <!-- Uren's Breadcrumb Area End Here -->
+<center style="margin-top:50px;">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li style="color: green;font-size: 24px;font-style: italic"{% if message.info %} class="{{ message.info }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</center>
 
 <div class="main-wrapper">
         <!-- Begin Uren's Login Register Area -->

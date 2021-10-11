@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 import json,urllib,requests
 from .models import *
+from django.contrib import messages
+
 # Create your views here.
 
 def downloadCities(request):
@@ -35,11 +37,29 @@ def indexPage(request):
     return render(request,'index.html',data)
 
 def productsHomePage(request):
-    side_products = Products.objects.all()[:20]
-    products = Products.objects.exclude(product_image="products/default.jpg")
-    brands = Brands.objects.all()[:15]
-    data = {'products':products,'brands':brands,'side_products':side_products}
-    return render(request,'shop-left-sidebar.html',data)
+    if request.method == 'POST':
+        part = request.POST['part']
+        parts = Products.objects.filter(product_name__contains=part)
+
+        if parts.count() > 0:
+            parts = parts
+            parts_count = parts.count()
+            messages.info(request, str(parts_count) + ' Related products found')
+        else:
+            messages.info(request, 'The product you submitted is not available')
+            parts = Products.objects.all()
+            parts_count = 0
+
+        all_years = Years.objects.all()
+        brands = Brands.objects.all()
+        data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part,'part_count':parts_count}
+        return render(request, 'contact-us-with-part-catefory.html', data)
+    else:
+        side_products = Products.objects.all()[:20]
+        products = Products.objects.exclude(product_image="products/default.jpg")
+        brands = Brands.objects.all()[:15]
+        data = {'products':products,'brands':brands,'side_products':side_products}
+        return render(request,'shop-left-sidebar.html',data)
 
 def singleProductPage(request,pname):
     if request.method == 'POST':
@@ -61,18 +81,23 @@ def storeLocator(request):
     return render(request,'store-locator-home-page.html',data)
 
 def displayCities(request,statename):
-    state = statename
-    cities = StateCityListNew.objects.filter(state = statename)
+
+    state = statename.replace('-' , ' ')
+    state = state.title()
+    cities = StateCityListNew.objects.filter(state__iexact = state)
     products = Products.objects.exclude(product_image="products/default.jpg")
     side_products = Products.objects.all()[:20]
-    desc = State.objects.get(name = statename)
+    desc = State.objects.get(name__iexact = state)
     data = {'cities':cities,'state':state,'products':products,'side_products':side_products,'desc':desc}
     return render(request, 'store-locator-city-page.html', data)
 
 def cityDetailswithProducts(request,statename,cityname):
-    state = statename
-    city = cityname
-    city_details = StateCityListNew.objects.get(county_or_city = city)
+
+    state = statename.replace('-', ' ')
+    state = state.title()
+    city = cityname.replace('-', ' ')
+    city = city.title()
+    city_details = StateCityListNew.objects.get(county_or_city__iexact = city)
     products = Products.objects.exclude(product_image="products/default.jpg")
     side_products = Products.objects.all()[:20]
     data = {'city_details':city_details,'state':state,'city':city,'products':products,'side_products':side_products}
@@ -90,9 +115,10 @@ def blogHomePage(request):
     data = {'blogs':blogs}
     return render(request,'blog-list-fullwidth.html',data)
 
-def blogDetailsRightSidebar(request,title,pk):
-    pk=pk
-    blog = Blogs.objects.get(id=pk)
+def blogDetailsRightSidebar(request,title):
+
+    title = title.replace('-',' ')
+    blog = Blogs.objects.get(title__iexact=title)
     recent_blogs = Blogs.objects.all().order_by('-date_created')[:10]
     data = {'blog':blog,'recent_blogs':recent_blogs}
     return render(request,'blog-details-right-sidebar.html',data)
@@ -118,8 +144,11 @@ def contactWithPart(request):
         customer = Customer.objects.create(year = year,part = part, brand = brand,
                    customer_name=customer_name,customer_phone=customer_phone,customer_email=customer_email)
         customer.save()
-        return redirect('/')
+        messages.info(request,'Thank You ! Test ')
+        return redirect('/order-completed')
 
+def orderCompleted(request):
+    return render(request,'thanks-for-order.html')
 
 def contactUS(request):
 

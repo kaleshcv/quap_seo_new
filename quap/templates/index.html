@@ -763,13 +763,13 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="blog-img img-hover_effect">
-                                        <a href="/blogs/{{blog.title|slugify}}/{{blog.id}}">
+                                        <a href="/blogs/{{blog.title|slugify}}">
                                             <img src="{{blog.main_image.url}}" alt="Quap's Blog Image" style="height:225px" >
                                         </a>
                                         <span class="post-date">{{blog.date_created}}</span>
                                     </div>
                                     <div class="blog-content">
-                                        <h3><a href="/blogs/{{blog.title|slugify}}/{{blog.id}}">{{blog.title}}</a></h3>
+                                        <h3><a href="/blogs/{{blog.title|slugify}}">{{blog.title}}</a></h3>
                                         <p>{{blog.desc|slice:":150"|safe}}...</p>
                                     </div>
                                 </div>

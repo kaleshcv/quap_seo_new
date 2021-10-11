@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('products-shops-local',productShopLocalArea),
     path('states',storeLocator),
-    path('blogs/<str:title>/<int:pk>',blogDetailsRightSidebar),
+    path('blogs/<str:title>',blogDetailsRightSidebar),
     #path('download-cities',downloadCities),
     path('used-auto-parts/<str:statename>',displayCities),
     path('used-auto-parts/<str:statename>/<str:cityname>',cityDetailswithProducts),
@@ -39,6 +39,8 @@ urlpatterns = [
     path('contact-us/<str:part>',contactUsWithPartName),
     path('order-part-now/<str:part>',orderPartNow),
     path('about-us',aboutUS),
+
+    path('order-completed',orderCompleted),
 
     # Test
     path('cp',changeProductName),

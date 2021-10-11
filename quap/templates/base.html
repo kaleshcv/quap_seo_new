@@ -242,7 +242,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="/contact-us ">All Products</a></li>
+                                        <li><a href="/used-auto-parts-us ">All Products</a></li>
 
                                     </ul>
                                 </div>
@@ -250,15 +250,12 @@
                         </div>
                         <div class="custom-search_col col-12">
                             <div class="hm-form_area">
-                                <form action="/used-auto-parts-us" class="hm-searchbox">
+                                <form action="/used-auto-parts-us" class="hm-searchbox" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
                                     <select class="nice-select select-search-category">
                                         <option value="0">All Categories</option>
-                                        <option value="13">Car</option>
-                                        <option value="14">Truck</option>
-                                        <option value="15">CUV</option>
-                                        <option value="16">SUV</option>
                                     </select>
-                                    <input type="text" placeholder="Search by Part Type, Brand or SKU">
+                                    <input type="text" placeholder="Search by Part Type, Brand or SKU" name="part">
                                     <button class="header-search_btn" type="submit"><i
                                         class="ion-ios-search-strong"><span>Search</span></i></button>
                                 </form>
