@@ -22,7 +22,9 @@ from .views import *
 urlpatterns = [
     path('',indexPage),
     path('robots.txt',TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
-    path('used-auto-parts-us',productsHomePage),
+    path('used-auto-parts-search',productsSearchPage),
+    path('used-auto-parts-search/<str:part>',productsSearchPageCategory),
+    path('used-auto-parts-us',productHomePage),
     path('used-auto-parts-us/<str:pname>',singleProductPage),
 
     path('products-shops-local',productShopLocalArea),

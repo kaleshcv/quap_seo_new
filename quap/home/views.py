@@ -36,7 +36,16 @@ def indexPage(request):
     data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob,'products':products}
     return render(request,'index.html',data)
 
-def productsHomePage(request):
+
+def productHomePage(request):
+    side_products = Products.objects.all()[:20]
+    products = Products.objects.exclude(product_image="products/default.jpg")
+    brands = Brands.objects.all()[:15]
+    data = {'products': products, 'brands': brands, 'side_products': side_products}
+    return render(request, 'shop-left-sidebar.html', data)
+
+
+def productsSearchPage(request):
     if request.method == 'POST':
         part = request.POST['part']
         parts = Products.objects.filter(product_name__contains=part)
@@ -55,20 +64,57 @@ def productsHomePage(request):
         data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part,'part_count':parts_count}
         return render(request, 'contact-us-with-part-catefory.html', data)
     else:
-        side_products = Products.objects.all()[:20]
-        products = Products.objects.exclude(product_image="products/default.jpg")
-        brands = Brands.objects.all()[:15]
-        data = {'products':products,'brands':brands,'side_products':side_products}
-        return render(request,'shop-left-sidebar.html',data)
+
+        parts = Products.objects.all()
+        all_years = Years.objects.all()
+        brands = Brands.objects.all()
+        data = {'parts': parts, 'all_years': all_years, 'brands': brands}
+        return render(request, 'contact-us-with-part-catefory.html', data)
+
+
+def productsSearchPageCategory(request,part):
+    part = part
+    parts = Products.objects.filter(product_name__contains=part)
+
+    if parts.count() > 0:
+        parts = parts
+        parts_count = parts.count()
+        messages.info(request, str(parts_count) + ' Related products found')
+    else:
+        messages.info(request, 'The product you submitted is not available')
+        parts = Products.objects.all()
+        parts_count = 0
+
+    all_years = Years.objects.all()
+    brands = Brands.objects.all()
+    data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part, 'part_count': parts_count}
+    return render(request, 'contact-us-with-part-catefory.html', data)
+
 
 def singleProductPage(request,pname):
     if request.method == 'POST':
         pid = request.POST['pid']
         product = Products.objects.get(id=pid)
-        data = {'product':product}
-        return render(request,'single-product.html',data)
+        all_years = Years.objects.all()
+        brands = Brands.objects.all()
+        data = {'product': product, 'years': all_years, 'brands': brands}
+        return render(request, 'single-product.html', data)
+
     else:
-        pass
+        part = pname.replace('-',' ')
+        part = part.title()
+        try:
+            product = Products.objects.get(product_name__iexact=part)
+        except Products.DoesNotExist:
+            product = None
+            messages.info(request,'The requested product does not exist')
+            return redirect('/used-auto-parts-us')
+        all_years = Years.objects.all()
+        brands = Brands.objects.all()
+        data = {'product': product,'years':all_years,'brands':brands}
+        return render(request, 'single-product.html', data)
+
+
 
 def productShopLocalArea(request):
     return render(request, 'shop-left-sidebar-from-counties.html')
@@ -86,9 +132,10 @@ def displayCities(request,statename):
     state = state.title()
     cities = StateCityListNew.objects.filter(state__iexact = state)
     products = Products.objects.exclude(product_image="products/default.jpg")
-    side_products = Products.objects.all()[:20]
+    side_products = Products.objects.all()[:10]
     desc = State.objects.get(name__iexact = state)
-    data = {'cities':cities,'state':state,'products':products,'side_products':side_products,'desc':desc}
+    brands = Brands.objects.all()[:10]
+    data = {'cities':cities,'state':state,'products':products,'side_products':side_products,'desc':desc,'brands':brands}
     return render(request, 'store-locator-city-page.html', data)
 
 def cityDetailswithProducts(request,statename,cityname):
@@ -99,8 +146,9 @@ def cityDetailswithProducts(request,statename,cityname):
     city = city.title()
     city_details = StateCityListNew.objects.get(county_or_city__iexact = city)
     products = Products.objects.exclude(product_image="products/default.jpg")
-    side_products = Products.objects.all()[:20]
-    data = {'city_details':city_details,'state':state,'city':city,'products':products,'side_products':side_products}
+    side_products = Products.objects.all()[:10]
+    brands = Brands.objects.all()[:10]
+    data = {'city_details':city_details,'state':state,'city':city,'products':products,'side_products':side_products,'brands':brands}
     return render(request,'city-product-page.html',data)
 
 
@@ -144,7 +192,6 @@ def contactWithPart(request):
         customer = Customer.objects.create(year = year,part = part, brand = brand,
                    customer_name=customer_name,customer_phone=customer_phone,customer_email=customer_email)
         customer.save()
-        messages.info(request,'Thank You ! Test ')
         return redirect('/order-completed')
 
 def orderCompleted(request):

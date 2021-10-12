@@ -26,7 +26,7 @@
                         <div class="col-lg-5">
                             <div class="sp-img_area">
                                 <div class="sp-img_slider slick-img-slider uren-slick-slider">
-                                    <div class="single-slide red">
+                                    <div class="single-slide red" style="padding:50px;">
                                         <img src="{{product.product_image.url}}" alt="Uren's Product Image">
                                     </div>
                                 </div>
@@ -68,11 +68,11 @@
                                 <small>Product Name</small>
                                 <h2>{{product.product_name}}</h2>
                             </div>
-                            <center>
+                            <!--<center>
                                 <p>features</p>
                                 <p>features</p>
                                 <p>features</p>
-                            </center>
+                            </center>-->
                         </div>
                         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4" id="Form">
                         <!-- Login Form s-->
@@ -84,7 +84,7 @@
                                     <div class="col-md-12 col-12">
                                         <label>Year</label>
                                         <select name="year" id="" class="form-control">
-                                            {% for ye in all_years %}
+                                            {% for ye in years %}
                                             <option value="{{ye.year_name}}">{{ye.year_name}}</option>
                                             {% endfor %}
                                         </select>
@@ -109,6 +109,7 @@
                                         <label>Email Address</label>
                                         <input type="email" name="customer_email" class="form-control" required>
                                     </div>
+                                    <input type="hidden" name="part" id="" value="{{product.product_name}}">
 
                                     <div class="col-md-12">
                                         <button class="uren-btn">Submit</button>
@@ -148,7 +149,7 @@
                                 </div>
         </div>
 
-        <!-- Begin Uren's Single Product Tab Area -->
+        <!-- Begin Uren's Single Product Tab Area
         <div class="sp-product-tab_area">
             <div class="container-fluid">
                 <div class="row">
@@ -282,7 +283,7 @@
                 </div>
             </div>
         </div>
-        <!-- Uren's Single Product Tab Area End Here -->
+        Uren's Single Product Tab Area End Here -->
 
 
         <!-- Uren's Product Area End Here -->

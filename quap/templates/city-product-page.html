@@ -30,6 +30,16 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
             <h1 class="main_h1 text-center" style="padding: 0px 10px;">Used Auto Parts in {{city}}, {{state}}</h1>
         </div>
         <!-- Uren's Breadcrumb Area End Here -->
+        <div class="container">
+            <div class="row">
+                <div style="padding: 0px 20px;text-align: justify;">
+                    <p>{{city_details.content_sentence_1}}</p>
+                    <p>{{city_details.content_sentence_2}}</p>
+                    <p>{{city_details.content_sentence_3}}</p>
+                    <p>{{city_details.content_sentence_4}}</p>
+                </div>
+            </div>
+        </div>
         <!-- Begin Uren's Banner Area -->
         <div class="uren-banner_area" style="padding-top:10px;">
             <div class="container-fluid">
@@ -66,23 +76,25 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
             </div>
         </div>
         <!-- Uren's Banner Area End Here -->
-        <div class="container">
-            <div class="row">
-                <div style="padding: 0px 20px;text-align: justify;margin-top: 50px;">
-                    <p>{{city_details.content_sentence_1}}</p>
-                    <p>{{city_details.content_sentence_2}}</p>
-                    <p>{{city_details.content_sentence_3}}</p>
-                    <p>{{city_details.content_sentence_4}}</p>
-                </div>
-            </div>
-        </div>
-
         <!-- Begin Uren's Shop Left Sidebar Area -->
         <div class="shop-content_wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-md-5 order-2 order-lg-1 order-md-1">
                         <div class="uren-sidebar-catagories_area">
+                            <div class="uren-sidebar_categories">
+                                <div class="uren-categories_title">
+                                    <h5>Manufacturers</h5>
+                                </div>
+                                <ul class="sidebar-checkbox_list">
+                                    {% for brand in brands %}
+                                    <li><a href="#">{{brand.brand_name}}<span></span></a></li>
+                                    {% endfor %}
+                                </ul>
+                                <div style="padding: 10px;">
+                                    <p><a href="" style="color:Red;float:right">View All Brands</a></p>
+                                </div>
+                            </div>
 
                             <div class="uren-sidebar_categories">
                                 <div class="uren-categories_title">
@@ -93,18 +105,14 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
                                     <li><a href="#">{{p.product_name}}<span></span></a></li>
                                     {% endfor %}
                                 </ul>
-                                <div>
+                                <div style="padding: 10px;">
                                     <p><a href="" style="color:Red;float:right">View All Products</a></p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
+
                     <div class="col-lg-9 col-md-7 order-1 order-lg-2 order-md-2">
-                        <div class="section-title_area">
-                            <h2 class="main_h1">Popular Used Car Parts in {{city}}, {{state}}</h2>
-                        </div>
                         <div class="shop-toolbar">
                             <div class="product-view-mode">
                                 <a class="grid-1" data-target="gridview-1" data-toggle="tooltip" data-placement="top" title="1">1</a>
@@ -115,15 +123,13 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
                             </div>
                         </div>
                         <div class="shop-product-wrap grid gridview-3 img-hover-effect_area row">
-
                             {% for p in products %}
-
                             <div class="col-lg-4">
                                 <div class="product-slide_item">
                                     <div class="inner-slide">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="/order-part-now/{{p.product_name}}">
+                                                <a href="/used-auto-parts-us/{{p.product_name|slugify}}">
                                                     <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 100%; height: 200px">
                                                     <img class="secondary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 100%; height: 200px">
                                                 </a>
@@ -131,12 +137,7 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
                                                     <span class="sticker">New</span>
                                                 </div>
                                                 <div class="add-actions">
-                                                    <ul>
-                                                        <li><a class="uren-add_cart" href="/order-part-now/{{p.product_name}}" data-toggle="tooltip" data-placement="top" title="Get a Quote"><i
-                                                            class="ion-bag"></i></a>
-                                                        </li>
-
-                                                    </ul>
+                                                    <a href="/used-auto-parts-us/{{p.product_name|slugify}}" style="background: #e52e06;padding: 5px 10px;color: #fafbfd;">Get Quote</a>
                                                 </div>
                                             </div>
                                             <div class="product-content">
@@ -151,7 +152,7 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <h6><a class="product-name" href="/order-part-now/{{p.product_name}}">{{p.product_name}}</a></h6>
+                                                    <h6><a class="product-name" href="/used-auto-parts-us/{{p.product_name|slugify}}">{{p.product_name}}</a></h6>
                                                     <div class="price-box">
                                                     </div>
                                                 </div>
@@ -159,36 +160,15 @@ Used Auto Parts in {{city}}, {{state}}- From Salvage & Junkyard| QUAP
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
-
                             {% endfor %}
-
-
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="uren-paginatoin-area">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <ul class="uren-pagination-box primary-color">
-                                                <li class="active"><a href="javascript:void(0)">1</a></li>
-                                                <li><a href="javascript:void(0)">2</a></li>
-                                                <li><a href="javascript:void(0)">3</a></li>
-                                                <li><a href="javascript:void(0)">4</a></li>
-                                                <li><a href="javascript:void(0)">5</a></li>
-                                                <li><a class="Next" href="javascript:void(0)">Next</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Uren's Shop Left Sidebar Area End Here -->
         <div class="frequently-area">
             <div class="container-fluid">
