@@ -21,7 +21,11 @@ from .views import *
 
 urlpatterns = [
     path('',indexPage),
+
     path('robots.txt',TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path('sitemap.xml',TemplateView.as_view(template_name="sitemap.xml", content_type="text/plain")),
+    path('sitemap.html',TemplateView.as_view(template_name="sitemap.html")),
+
     path('used-auto-parts-search',productsSearchPage),
     path('used-auto-parts-search/<str:part>',productsSearchPageCategory),
     path('used-auto-parts-us',productHomePage),

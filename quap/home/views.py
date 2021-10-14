@@ -192,7 +192,8 @@ def contactWithPart(request):
         customer = Customer.objects.create(year = year,part = part, brand = brand,
                    customer_name=customer_name,customer_phone=customer_phone,customer_email=customer_email)
         customer.save()
-        return redirect('/order-completed')
+        data = {'year':year,'part':part,'brand':brand}
+        return render(request,'thanks-for-order.html',data)
 
 def orderCompleted(request):
     return render(request,'thanks-for-order.html')
