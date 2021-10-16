@@ -45,51 +45,6 @@ def productHomePage(request):
     return render(request, 'shop-left-sidebar.html', data)
 
 
-def productsSearchPage(request):
-    if request.method == 'POST':
-        part = request.POST['part']
-        parts = Products.objects.filter(product_name__contains=part)
-
-        if parts.count() > 0:
-            parts = parts
-            parts_count = parts.count()
-            messages.info(request, str(parts_count) + ' Related products found')
-        else:
-            messages.info(request, 'The product you submitted is not available')
-            parts = Products.objects.all()
-            parts_count = 0
-
-        all_years = Years.objects.all()
-        brands = Brands.objects.all()
-        data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part,'part_count':parts_count}
-        return render(request, 'contact-us-with-part-catefory.html', data)
-    else:
-
-        parts = Products.objects.all()
-        all_years = Years.objects.all()
-        brands = Brands.objects.all()
-        data = {'parts': parts, 'all_years': all_years, 'brands': brands}
-        return render(request, 'contact-us-with-part-catefory.html', data)
-
-
-def productsSearchPageCategory(request,part):
-    part = part
-    parts = Products.objects.filter(product_name__contains=part)
-
-    if parts.count() > 0:
-        parts = parts
-        parts_count = parts.count()
-        messages.info(request, str(parts_count) + ' Related products found')
-    else:
-        messages.info(request, 'The product you submitted is not available')
-        parts = Products.objects.all()
-        parts_count = 0
-
-    all_years = Years.objects.all()
-    brands = Brands.objects.all()
-    data = {'parts': parts, 'all_years': all_years, 'brands': brands, 'part': part, 'part_count': parts_count}
-    return render(request, 'contact-us-with-part-catefory.html', data)
-
 
 def singleProductPage(request,pname):
     if request.method == 'POST':

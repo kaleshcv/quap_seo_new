@@ -26,8 +26,6 @@ urlpatterns = [
     path('sitemap.xml',TemplateView.as_view(template_name="sitemap.xml", content_type="text/plain")),
     path('sitemap.html',TemplateView.as_view(template_name="sitemap.html")),
 
-    path('used-auto-parts-search',productsSearchPage),
-    path('used-auto-parts-search/<str:part>',productsSearchPageCategory),
     path('used-auto-parts-us',productHomePage),
     path('used-auto-parts-us/<str:pname>',singleProductPage),
 
@@ -45,7 +43,6 @@ urlpatterns = [
     path('contact-us/<str:part>',contactUsWithPartName),
     path('order-part-now/<str:part>',orderPartNow),
     path('about-us',aboutUS),
-
     path('order-completed',orderCompleted),
 
     # Test
