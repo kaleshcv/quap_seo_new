@@ -23,14 +23,16 @@
             <div class="container-fluid">
                 <div class="sp-nav">
                     <div class="row">
-                        <div class="col-lg-5">
-                            <div class="sp-img_area">
-                                <div class="sp-img_slider slick-img-slider uren-slick-slider">
-                                    <div class="single-slide red" style="padding:50px;">
-                                        <img src="{{product.product_image.url}}" alt="Uren's Product Image">
-                                    </div>
-                                </div>
+                        <div class="col-lg-4">
+                            <center>
+                                <div>
+                                <small>Product Name</small>
+                                <h2>{{product.product_name}}</h2>
                             </div>
+                            <div style="padding:50px;">
+                                <img src="{{product.product_image.url}}" alt="quap-part-image" style="width: 300px; height: 300px;border: 1px solid lightgrey;padding: 20px;">
+                            </div>
+                                </center>
                             <center>
                                 <div class="uren-social_link">
                                     <ul>
@@ -63,16 +65,44 @@
                                 </div>
                             </center>
                         </div>
-                        <div class="col-lg-3">
-                            <div style="margin:50px 0px">
-                                <small>Product Name</small>
-                                <h2>{{product.product_name}}</h2>
+                        <div class="col-lg-4">
+                            <div>
+                                <h6>PRODUCT DETAILS</h6>
+                                <p>Part No. BHA380979</p>
+                                <span>Price:</span>
+                                <span style="color: green;font-size: 24px;">$50.89</span><br>
+                                <span style="color: #e52e06;">Warranty Details</span>
+                                <span>(1 YR REPLACEMENT IF DEFECTIVE)</span>
+                                <br><br>
+                                <h5>Product Features:</h5>
+                                <ul>
+                                    <li>All brake hoses are designed base on SAE J1401</li>
+                                    <li>Brake hoses with banjo end fittings include new copper washers</li>
+                                    <li>Tensile minimum load could up to 1800N</li>
+                                    <li>Bursting strength of all brake hoses not less than 8000 psi</li>
+                                    <li>All end fittings are plated with environmental protection material</li>
+                                </ul>
+                                <br>
+                                <h6>SPECIFICATIONS</h6>
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Bracket Material:</td>
+                                        <td>Stamped Steel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>End 1 Fitting Type:</td>
+                                        <td>Banjo - 10 mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>End 2 Fitting Type:</td>
+                                        <td>Female - M10 x 1.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Length - Segment 2:</td>
+                                        <td>9.25 in</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <!--<center>
-                                <p>features</p>
-                                <p>features</p>
-                                <p>features</p>
-                            </center>-->
                         </div>
                         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4" id="Form">
                         <!-- Login Form s-->
@@ -122,8 +152,12 @@
                 </div>
             </div>
         </div>
+
         <!-- Uren's Single Product Area End Here -->
         <div class="container-fluid" style="margin:50px 10px">
+            <div>
+                <p style="border: 1px dotted #e52e06;" class="text-center">This item is not eligible for further promotional discounts, coupons or special offers.</p>
+            </div>
                             <div class="row">
                                     <div class="col-lg-3">
                                             <div class="product-specs">

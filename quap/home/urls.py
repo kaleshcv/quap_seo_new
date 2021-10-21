@@ -41,11 +41,19 @@ urlpatterns = [
     path('get-instant-quote',contactWithPart),
     path('contact-us',contactUS),
     path('contact-us/<str:part>',contactUsWithPartName),
-    path('order-part-now/<str:part>',orderPartNow),
+    #path('order-part-now/<str:part>',orderPartNow),
     path('about-us',aboutUS),
     path('order-completed',orderCompleted),
 
     # Test
     path('cp',changeProductName),
+
+    #Redirects
+    path('order-part-now/<str:pname>',redirectToProductPage),
+    path('products-shops',redirectToProductPageOne),
+    path('used-auto-parts-search/<str:pname>',redirectToProductPage),
+    path('blogs/benefits-of-buying-used-auto-parts/11',redirectToBlog),
+
+
 ]
 

@@ -61,6 +61,7 @@ def singleProductPage(request,pname):
         try:
             product = Products.objects.get(product_name__iexact=part)
         except Products.DoesNotExist:
+
             product = None
             messages.info(request,'The requested product does not exist')
             return redirect('/used-auto-parts-us')
@@ -82,6 +83,12 @@ def storeLocator(request):
     return render(request,'store-locator-home-page.html',data)
 
 def displayCities(request,statename):
+    if statename == 'Maryland':
+        return redirect('/used-auto-parts/maryland')
+    elif statename == 'Texas':
+        return redirect('/used-auto-parts/texas')
+    elif statename == 'Mississippi':
+        return redirect('/used-auto-parts/mississippi')
 
     state = statename.replace('-' , ' ')
     state = state.title()
@@ -94,6 +101,30 @@ def displayCities(request,statename):
     return render(request, 'store-locator-city-page.html', data)
 
 def cityDetailswithProducts(request,statename,cityname):
+    if statename == 'Maryland' and cityname == 'Baltimore':
+        return redirect('/used-auto-parts/maryland/baltimore')
+    elif statename == 'Texas' and cityname == 'Dallas':
+        return redirect('/used-auto-parts/texas/dallas')
+    elif statename == 'Texas' and cityname == 'Houston':
+        return redirect('/used-auto-parts/texas/houston')
+    elif statename == 'Texas' and cityname == 'San Antonio':
+        return redirect('/used-auto-parts/texas/san-antonio')
+    elif statename == 'Maryland' and cityname == 'Frederick':
+        return redirect('/used-auto-parts/maryland/frederick')
+    elif statename == 'Maryland' and cityname == 'Germantown':
+        return redirect('/used-auto-parts/maryland/germantown')
+    elif statename == 'Maryland' and cityname == 'Silver Spring':
+        return redirect('/used-auto-parts/maryland/silver-spring')
+    elif statename == 'Maryland' and cityname == 'Columbia':
+        return redirect('/used-auto-parts/maryland/columbia')
+    elif statename == 'Colorado' and cityname == 'Denver':
+        return redirect('/used-auto-parts/colorado/denver')
+    elif statename == 'Mississippi' and cityname == 'Gulfport':
+        return redirect('/used-auto-parts/mississippi/gulfport')
+    elif statename == 'Mississippi' and cityname == 'Southaven':
+        return redirect('/used-auto-parts/mississippi/southaven')
+    elif statename == 'Mississippi' and cityname == 'Hattiesburg':
+        return redirect('/used-auto-parts/mississippi/hattiesburg')
 
     state = statename.replace('-', ' ')
     state = state.title()
@@ -119,7 +150,8 @@ def blogHomePage(request):
     return render(request,'blog-list-fullwidth.html',data)
 
 def blogDetailsRightSidebar(request,title):
-
+    if title == '10' or title == '8' or title == '9':
+        return redirect('/blogs')
     title = title.replace('-',' ')
     blog = Blogs.objects.get(title__iexact=title)
     recent_blogs = Blogs.objects.all().order_by('-date_created')[:10]
@@ -189,4 +221,14 @@ def changeProductName(request):
         new = new.replace(' ','-')
         new = new.replace('/', '')
         print(new)
+
+
+#Redirects
+def redirectToProductPage(request,pname):
+    return redirect('/used-auto-parts-us')
+def redirectToProductPageOne(request):
+    return redirect('/used-auto-parts-us')
+def redirectToBlog(request):
+    return redirect('/blogs/benefits-of-buying-used-auto-parts')
+
 
