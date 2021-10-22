@@ -33,16 +33,32 @@ def indexPage(request):
     all_years = Years.objects.all()
     brands = Brands.objects.all()
     products = Products.objects.exclude(product_image="products/default.jpg")
-    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob,'products':products}
+    first_set = Products.objects.all().order_by('-id')[:4]
+    second_set = Products.objects.all().order_by('-id')[4:8]
+    data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob,'products':products,
+            'first_set':first_set,'second_set':second_set
+            }
     return render(request,'index.html',data)
 
 
 def productHomePage(request):
-    side_products = Products.objects.all()[:20]
-    products = Products.objects.exclude(product_image="products/default.jpg")
-    brands = Brands.objects.all()[:15]
-    data = {'products': products, 'brands': brands, 'side_products': side_products}
-    return render(request, 'shop-left-sidebar.html', data)
+    if request.method== 'POST':
+        part = request.POST['part']
+        products = Products.objects.filter(product_name__icontains=part)
+        if products.count()==0:
+            products = Products.objects.exclude(product_image="products/default.jpg")
+        pop_products = Products.objects.all()
+        side_products = Products.objects.all().order_by('-id')[100:115]
+        data = {'products':products,'pop_products':pop_products,'side_products':side_products}
+        return render(request, 'shop-left-sidebar.html', data)
+
+    else:
+        side_products = Products.objects.all().order_by('-id')[200:215]
+        products = Products.objects.exclude(product_image="products/default.jpg")
+        brands = Brands.objects.all()[:15]
+        pop_products = Products.objects.all()
+        data = {'products': products, 'brands': brands, 'side_products': side_products,'pop_products':pop_products}
+        return render(request, 'shop-left-sidebar.html', data)
 
 
 

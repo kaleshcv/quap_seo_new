@@ -28,6 +28,205 @@
         </div>
         <!-- Popular Search Area End Here -->
 
+        <div class="container-fluid" style="margin-bottom:30px">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 40% off | Engine & accessories</h4>
+                        <center>
+                            <img src="{% static 'assets/images/index/engine.jpg' %}" alt="" class="img-fluid" style="min-height:400px;">
+                        </center>
+                        <br>
+                        <a href="">See all offers</a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 80% off | Car Accessories</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <center>
+                                    <img src="{% static 'assets/images/product/medium-size/1-1.jpg' %}" alt="">
+                                </center>
+                                <a href="">Wheels</a>
+                            </div>
+                            <div class="col-md-6">
+                                <center>
+                                    <img src="{% static 'assets/images/product/medium-size/2-1.jpg' %}" alt="">
+                                </center>
+                                <a href="">Brakes</a>
+                            </div>
+                            <div class="col-md-6" style="margin-top:30px">
+                                <center>
+                                    <img src="{% static 'assets/images/product/medium-size/3-1.jpg' %}" alt="">
+                                </center>
+                                <a href="">Engines</a>
+                            </div>
+                            <div class="col-md-6" style="margin-top:30px">
+                                <center>
+                                    <img src="{% static 'assets/images/product/medium-size/4-1.jpg' %}" alt="">
+                                </center>
+                                <a href="">Tires</a>
+                            </div>
+                        </div>
+                        <br><br>
+                        <a href="">See all Deals</a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 40% off | Car <br>Batteries</h4>
+                        <center>
+                            <img src="{% static 'assets/images/index/battery.jpg' %}" alt="" class="img-fluid" style="min-height:400px;">
+                        </center>
+                        <br>
+                        <a href="">See all offers</a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 40% off | Transmission & accessories</h4>
+                        <center>
+                            <img src="{% static 'assets/images/index/transm_oil_cooler.jpg' %}" alt="" class="img-fluid" style="min-height:400px;">
+                        </center>
+                        <br>
+                        <a href="">See all offers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Begin Uren's Product Area -->
+        <div style="padding: 30px 20px;background: #d3d3d32e;margin-bottom: 30px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div>
+                            <h3>Popular Products</h3>
+                        </div>
+                        <div class="product-slider uren-slick-slider slider-navigation_style-1 img-hover-effect_area" data-slick-options='{
+                        "slidesToShow": 6,
+                        "arrows" : true
+                        }' data-slick-responsive='[
+                                                {"breakpoint":1501, "settings": {"slidesToShow": 4}},
+                                                {"breakpoint":1200, "settings": {"slidesToShow": 3}},
+                                                {"breakpoint":992, "settings": {"slidesToShow": 2}},
+                                                {"breakpoint":767, "settings": {"slidesToShow": 1}},
+                                                {"breakpoint":480, "settings": {"slidesToShow": 1}}
+                                            ]'>
+                            {% for p in products %}
+
+                            <div class="product-slide_item">
+                                <div class="inner-slide">
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a>
+                                                <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="height: 250px;padding:20px;">
+                                                <img class="secondary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="height: 250px;padding:20px;">
+                                            </a>
+                                            <div class="sticker">
+                                                <span class="sticker">New</span>
+                                            </div>
+                                            <div class="add-actions">
+                                                <form action="/used-auto-parts-us/{{p.product_name|slugify}}" method="POST" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="pid" value="{{p.id}}">
+                                                        <p style="margin-top:5px;">{{p.product_name}}</p>
+                                                        <button type="submit" class="btn btn-secondary">Get Quote</button>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <div class="product-desc_info">
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="ion-android-star"></i></li>
+                                                        <li><i class="ion-android-star"></i></li>
+                                                        <li><i class="ion-android-star"></i></li>
+                                                        <li><i class="ion-android-star"></i></li>
+                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <h6><a class="product-name">{{p.product_name}}</a></h6>
+                                                <div class="price-box">
+                                                    <span class="new-price">Get Quote</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" style="margin-bottom:30px">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Great offers on Latest Products</h4>
+                        <div class="row">
+                            {% for f in first_set %}
+                            <div class="col-md-6">
+                                <center>
+                                    <img src="{% static 'assets/images/product/medium-size/1-1.jpg' %}" alt="">
+                                </center>
+                                <a href="">{{f.product_name}}</a>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                        <br><br>
+                        <a href="">See all Deals</a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 40% off | New <br>Arrivals</h4>
+                        <div class="row">
+                            {% for f in second_set %}
+                            <div class="col-md-6">
+                                <center>
+                                    <img src="{% static 'assets/images/product/medium-size/1-1.jpg' %}" alt="">
+                                </center>
+                                <a href="">{{f.product_name}}</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <br><br>
+                        <a href="">See all Deals</a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 40% off | Wheels <br>Accessories</h4>
+                        <center>
+                            <img src="{% static 'assets/images/index/wheel_b.jpg' %}" alt="" class="img-fluid" style="min-height:400px;">
+                        </center>
+                        <br>
+                        <a href="">See all offers</a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div style="padding: 20px;background: #f7f7f7;min-height:555px">
+                        <h4 style="margin-bottom:20px;">Up to 40% off | Transmission & accessories</h4>
+                        <center>
+                            <img src="{% static 'assets/images/index/transmission.jpg' %}" alt="" class="img-fluid" style="min-height:400px;">
+                        </center>
+                        <br>
+                        <a href="">See all offers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Uren's Product Area End Here -->
+
         <div class="uren-slider_area">
             <div class="container-fluid">
                 <div class="row">
@@ -517,7 +716,9 @@
                                                 <form action="/used-auto-parts-us/{{p.product_name|slugify}}" method="POST" enctype="multipart/form-data">
                                                         {% csrf_token %}
                                                         <input type="hidden" name="pid" value="{{p.id}}">
+                                                        <p>{{p.product_name}}</p>
                                                         <button type="submit" class="btn btn-secondary">Get Quote</button>
+
                                                 </form>
                                             </div>
                                         </div>
@@ -532,7 +733,7 @@
                                                         <li class="silver-color"><i class="ion-android-star"></i></li>
                                                     </ul>
                                                 </div>
-                                                <h6><a class="product-name">Wheels</a></h6>
+                                                <h6><a class="product-name">{{p.product_name}}</a></h6>
                                                 <div class="price-box">
                                                     <span class="new-price">Get Quote</span>
                                                 </div>
