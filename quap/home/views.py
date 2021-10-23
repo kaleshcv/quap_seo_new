@@ -68,7 +68,8 @@ def singleProductPage(request,pname):
         product = Products.objects.get(id=pid)
         all_years = Years.objects.all()
         brands = Brands.objects.all()
-        data = {'product': product, 'years': all_years, 'brands': brands}
+        products = Products.objects.exclude(product_image="products/default.jpg")
+        data = {'product': product, 'years': all_years, 'brands': brands,'products':products}
         return render(request, 'single-product.html', data)
 
     else:
@@ -83,7 +84,8 @@ def singleProductPage(request,pname):
             return redirect('/used-auto-parts-us')
         all_years = Years.objects.all()
         brands = Brands.objects.all()
-        data = {'product': product,'years':all_years,'brands':brands}
+        products = Products.objects.exclude(product_image="products/default.jpg")
+        data = {'product': product,'years':all_years,'brands':brands,'products':products}
         return render(request, 'single-product.html', data)
 
 
@@ -146,7 +148,7 @@ def cityDetailswithProducts(request,statename,cityname):
     state = state.title()
     city = cityname.replace('-', ' ')
     city = city.title()
-    city_details = StateCityListNew.objects.get(county_or_city__iexact = city)
+    city_details = StateCityListNew.objects.get(county_or_city__iexact = city,state__iexact=state)
     products = Products.objects.exclude(product_image="products/default.jpg")
     side_products = Products.objects.all()[:10]
     brands = Brands.objects.all()[:10]
@@ -227,6 +229,14 @@ def orderPartNow(request,part):
 
 def aboutUS(request):
     return render(request,'about-us.html')
+
+def offersAndDiscounts(request):
+    side_products = Products.objects.all().order_by('-id')[200:215]
+    products = Products.objects.exclude(product_image="products/default.jpg")
+    brands = Brands.objects.all()[:15]
+    pop_products = Products.objects.all()
+    data = {'products': products, 'brands': brands, 'side_products': side_products, 'pop_products': pop_products}
+    return render(request,'offers-discounts.html',data)
 
 def changeProductName(request):
     p = Products.objects.all()[:10]

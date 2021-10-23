@@ -262,6 +262,14 @@ p {
     font-weight: 600;
 }
 
+.bg-engine-offer {
+  background-image: url("../images/offer/engine.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 300px;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -5278,7 +5286,7 @@ button, .global-overlay, .quantity .cart-plus-minus > .qtybutton, .price-filter 
 
 .header-top_area .main-menu_area > nav > ul > li > a {
   font-weight: 700;
-  color: #ffffff;
+  color: #ffffff !important;
   display: block;
   padding: 23px 0;
   text-transform: uppercase;

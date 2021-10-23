@@ -44,6 +44,31 @@ class Blogs(models.Model):
 class Products(models.Model):
     product_name = models.CharField(max_length=200,null=True)
     product_image = models.ImageField(upload_to="products/", default="products/default.jpg")
+    price = models.FloatField(null=True)
+    part_number = models.CharField(max_length=50,null=True)
+
+    spec_1_qn = models.CharField(max_length=50,null=True)
+    spec_1_ans = models.CharField(max_length=50, null=True)
+    spec_2_qn = models.CharField(max_length=50, null=True)
+    spec_2_ans = models.CharField(max_length=50, null=True)
+    spec_3_qn = models.CharField(max_length=50, null=True)
+    spec_3_ans = models.CharField(max_length=50, null=True)
+    spec_4_qn = models.CharField(max_length=50, null=True)
+    spec_4_ans = models.CharField(max_length=50, null=True)
+
+    warranty = models.CharField(max_length=200,default='Not Available')
+    product_feature_1 = models.CharField(max_length=100,null=True)
+    product_feature_2 = models.CharField(max_length=100,null=True)
+    product_feature_3 = models.CharField(max_length=100,null=True)
+    product_feature_4 = models.CharField(max_length=100,null=True)
+
+    category_list =(
+        ('Engine System','Engine System'),('Interior','Interior'),
+        ('Body Parts','Body Parts'), ('Safety and Security','Safety and Security'),
+        ('Suspension Systems','Suspension Systems'),('Wheels and Tires','Wheels and Tires')
+    )
+    category = models.CharField(max_length=100, choices=category_list,null=True)
+    remarks = models.TextField(null=True)
 
     def __str__(self):
         return self.product_name[:100]

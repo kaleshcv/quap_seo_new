@@ -64,90 +64,79 @@
                                     </ul>
                                 </div>
                             </center>
+                            <div style="margin-top:50px;margin-bottom:30px;">
+                                <h5>Product Features:</h5>
+                                <ul>
+                                    <li>{{product.product_feature_1}}</li>
+                                    <li>{{product.product_feature_2}}</li>
+                                    <li>{{product.product_feature_3}}</li>
+                                    <li>{{product.product_feature_4}}</li>
+                                    <li>{{product.product_feature_5}}</li>
+                                </ul>
+                                <br>
+                            </div>
                         </div>
                         <div class="col-lg-4">
                             <div>
                                 <h6>PRODUCT DETAILS</h6>
-                                <p>Part No. BHA380979</p>
+                                <p>Part No. {{product.part_number}}</p>
                                 <span>Price:</span>
-                                <span style="color: green;font-size: 24px;">$50.89</span><br>
+                                <span style="color: green;font-size: 24px;">{{product.price}}</span><br>
                                 <span style="color: #e52e06;">Warranty Details</span>
-                                <span>(1 YR REPLACEMENT IF DEFECTIVE)</span>
+                                <span>{{product.warranty}}</span>
                                 <br><br>
-                                <h5>Product Features:</h5>
-                                <ul>
-                                    <li>All brake hoses are designed base on SAE J1401</li>
-                                    <li>Brake hoses with banjo end fittings include new copper washers</li>
-                                    <li>Tensile minimum load could up to 1800N</li>
-                                    <li>Bursting strength of all brake hoses not less than 8000 psi</li>
-                                    <li>All end fittings are plated with environmental protection material</li>
-                                </ul>
-                                <br>
+
                                 <h6>SPECIFICATIONS</h6>
                                 <table class="table table-hover">
                                     <tr>
-                                        <td>Bracket Material:</td>
-                                        <td>Stamped Steel</td>
+                                        <td>{{product.spec_1_qn}}:</td>
+                                        <td>{{product.spec_1_ans}}</td>
                                     </tr>
                                     <tr>
-                                        <td>End 1 Fitting Type:</td>
-                                        <td>Banjo - 10 mm</td>
+                                        <td>{{product.spec_2_qn}}:</td>
+                                        <td>{{product.spec_2_ans}}</td>
                                     </tr>
                                     <tr>
-                                        <td>End 2 Fitting Type:</td>
-                                        <td>Female - M10 x 1.0</td>
+                                        <td>{{product.spec_3_qn}}:</td>
+                                        <td>{{product.spec_3_ans}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Length - Segment 2:</td>
-                                        <td>9.25 in</td>
+                                        <td>{{product.spec_4_qn}}:</td>
+                                        <td>{{product.spec_4_ans}}</td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4" id="Form">
-                        <!-- Login Form s-->
-                        <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div class="login-form">
-                                <h2 style="font-size: 30px">Select Year & Model </h2>
-                                <div class="row">
-                                    <div class="col-md-12 col-12">
-                                        <label>Year</label>
-                                        <select name="year" id="" class="form-control">
+                            <div>
+                                <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <label for="">Select Manufacturing Year</label>
+                                    <select name="year" id="" class="form-control">
                                             {% for ye in years %}
                                             <option value="{{ye.year_name}}">{{ye.year_name}}</option>
                                             {% endfor %}
-                                        </select>
-                                    </div>
-                                    <div class="col-md-12 col-12" style="margin-bottom:20px">
-                                        <label>Brand</label>
+                                    </select>
+                                    <label>Brand</label>
                                         <select name="brand" id="" class="form-control">
                                             {% for brand in brands %}
                                             <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
                                             {% endfor %}
                                         </select>
-                                    </div>
-                                    <div class="col-md-6 col-6">
-                                        <label><b>Name *</b></label>
-                                        <input type="text" name="customer_name" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6 col-6">
-                                        <label><b>Phone Number *</b></label>
-                                        <input type="tel" name="customer_phone" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-12 col-12">
-                                        <label>Email Address</label>
-                                        <input type="email" name="customer_email" class="form-control" required>
-                                    </div>
+                                    <label>Name *</label>
+                                    <input type="text" name="customer_name" class="form-control" required>
+                                    <label>Phone Number *</label>
+                                    <input type="tel" name="customer_phone" class="form-control" required>
+                                    <label>Email Address</label>
+                                    <input type="email" name="customer_email" class="form-control" required>
                                     <input type="hidden" name="part" id="" value="{{product.product_name}}">
+                                    <br>
+                                    <button class="uren-btn">Order Now</button>
+                                </form>
 
-                                    <div class="col-md-12">
-                                        <button class="uren-btn">Submit</button>
-                                    </div>
-                                </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4" id="Form">
+                        <!-- Login Form s-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -182,6 +171,74 @@
 
                                 </div>
         </div>
+        <div class="container-fluid" style="margin-bottom:50px">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <h3>Popular Products</h3>
+                                        </div>
+                                        <div class="product-slider uren-slick-slider slider-navigation_style-1 img-hover-effect_area" data-slick-options='{
+                                        "slidesToShow": 6,
+                                        "arrows" : true
+                                        }' data-slick-responsive='[
+                                                                {"breakpoint":1501, "settings": {"slidesToShow": 4}},
+                                                                {"breakpoint":1200, "settings": {"slidesToShow": 3}},
+                                                                {"breakpoint":992, "settings": {"slidesToShow": 2}},
+                                                                {"breakpoint":767, "settings": {"slidesToShow": 1}},
+                                                                {"breakpoint":480, "settings": {"slidesToShow": 1}}
+                                                            ]'>
+                                            {% for p in products %}
+
+                                            <div class="product-slide_item">
+                                                <div class="inner-slide">
+                                                    <div class="single-product">
+                                                        <div class="product-img">
+                                                            <a>
+                                                                <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="height: 250px;padding:20px;">
+                                                                <img class="secondary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="height: 250px;padding:20px;">
+                                                            </a>
+                                                            <div class="sticker">
+                                                                <span class="sticker">New</span>
+                                                            </div>
+                                                            <div class="add-actions">
+                                                                <form action="/used-auto-parts-us/{{p.product_name|slugify}}" method="POST" enctype="multipart/form-data">
+                                                                        {% csrf_token %}
+                                                                        <input type="hidden" name="pid" value="{{p.id}}">
+                                                                        <p style="margin-top:5px;">{{p.product_name}}</p>
+                                                                        <button type="submit" class="btn btn-secondary">Get Quote</button>
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <div class="product-desc_info">
+                                                                <div class="rating-box">
+                                                                    <ul>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <h6><a class="product-name">{{p.product_name}}</a></h6>
+                                                                <div class="price-box">
+                                                                    <span class="new-price">Get Quote</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {% endfor %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        </div>
+
 
         <!-- Begin Uren's Single Product Tab Area
         <div class="sp-product-tab_area">

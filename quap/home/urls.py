@@ -44,6 +44,7 @@ urlpatterns = [
     #path('order-part-now/<str:part>',orderPartNow),
     path('about-us',aboutUS),
     path('order-completed',orderCompleted),
+    path('auto-part-deal-usa',offersAndDiscounts),
 
     # Test
     path('cp',changeProductName),

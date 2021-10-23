@@ -98,58 +98,51 @@ Used Auto Parts in {{state}}, USA- From Salvage & Junkyard| QUAP
                         </div>
                     </div>
 
-                    <div class="col-lg-9 col-md-7 order-1 order-lg-2 order-md-2">
-                        <div class="shop-toolbar">
-                            <div class="product-view-mode">
-                                <a class="grid-1" data-target="gridview-1" data-toggle="tooltip" data-placement="top" title="1">1</a>
-                                <a class="grid-2" data-target="gridview-2" data-toggle="tooltip" data-placement="top" title="2">2</a>
-                                <a class="active grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="3">3</a>
-                                <a class="grid-4" data-target="gridview-4" data-toggle="tooltip" data-placement="top" title="4">4</a>
-                                <a class="grid-5" data-target="gridview-5" data-toggle="tooltip" data-placement="top" title="5">5</a>
-                            </div>
-                        </div>
-                        <div class="shop-product-wrap grid gridview-3 img-hover-effect_area row">
+                    <div class="col-lg-9 col-md-3 order-1 order-lg-2 order-md-2">
+                        <div class="row">
                             {% for p in products %}
-                            <div class="col-lg-4">
-                                <div class="product-slide_item">
-                                    <div class="inner-slide">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="/used-auto-parts-us/{{p.product_name|slugify}}">
-                                                    <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 100%; height: 200px">
-                                                    <img class="secondary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 100%; height: 200px">
-                                                </a>
-                                                <div class="sticker">
-                                                    <span class="sticker">New</span>
-                                                </div>
-                                                <div class="add-actions">
-                                                    <a href="/used-auto-parts-us/{{p.product_name|slugify}}" style="background: #e52e06;padding: 5px 10px;color: #fafbfd;">Get Quote</a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content">
-                                                <div class="product-desc_info">
-                                                    <div class="rating-box">
-                                                        <ul>
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li class="silver-color"><i class="ion-android-star"></i>
-                                                            </li>
-                                                        </ul>
+                                <div class="col-md-3">
+                                    <center>
+                                        <div class="product-slide_item" style="max-width:300px">
+                                            <div class="inner-slide" style="border: 1px solid #e5e5e5;margin-bottom: 20px;">
+                                                <div class="single-product">
+                                                    <div class="product-img">
+                                                        <a href="/used-auto-parts-us/{{p.product_name|slugify}}">
+                                                            <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="width: 188px; height: 188px">
+                                                        </a>
+                                                        <div class="sticker">
+                                                            <span class="sticker">used</span>
+                                                        </div>
+                                                        <div class="add-actions">
+                                                            <p>{{p.product_name}}</p>
+                                                            <a href="/used-auto-parts-us/{{p.product_name|slugify}}" style="background: #e52e06;padding: 10px 10px;color: #fafbfd;border-radius: 5px;">Order Now</a>
+                                                        </div>
                                                     </div>
-                                                    <h6><a class="product-name" href="/used-auto-parts-us/{{p.product_name|slugify}}">{{p.product_name}}</a></h6>
-                                                    <div class="price-box">
+                                                    <div class="product-content">
+                                                        <div class="product-desc_info">
+                                                            <div class="rating-box">
+                                                                <ul>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li class="silver-color"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h6><a class="product-name" href="/used-auto-parts-us/{{p.product_name|slugify}}" style="font-size: 21px;color: #0c2a5c;">{{p.product_name}}</a></h6>
+                                                            <div class="price-box">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </center>
                                 </div>
-                            </div>
                             {% endfor %}
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
