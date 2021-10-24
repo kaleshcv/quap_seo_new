@@ -30,8 +30,34 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-5 order-2 order-lg-1 order-md-1">
                         <div class="uren-sidebar-catagories_area">
-
                             <div class="uren-sidebar_categories">
+                                <div>
+                                <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <label>Select Brand</label>
+                                        <select name="brand" id="" class="form-control">
+                                            {% for brand in brands %}
+                                            <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    <label>Choose Part</label>
+                                        <select name="brand" id="" class="form-control">
+                                            {% for brand in brands %}
+                                            <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    <label for="">Select Manufacturing Year</label>
+                                    <select name="year" id="" class="form-control">
+                                            {% for ye in years %}
+                                            <option value="{{ye.year_name}}">{{ye.year_name}}</option>
+                                            {% endfor %}
+                                    </select>
+
+                                    <br>
+                                    <button class="uren-btn">Search</button>
+                                </form>
+
+                            </div>
                                 <div style="padding: 10px 0px;">
                                     <form action="/used-auto-parts-us" method="POST" enctype="multipart/form-data">
                                         {% csrf_token %}
