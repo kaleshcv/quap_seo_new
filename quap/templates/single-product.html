@@ -26,11 +26,11 @@
                         <div class="col-lg-5">
                             <center>
                                 <div style="padding:0px 50px;">
-                                    <img src="{{product.product_image.url}}" alt="quap-part-image" style="width: 400px; height: 400px;border: 1px solid lightgrey;padding: 20px;">
+                                    <img class="img-fluid" src="{{product.product_image.url}}" alt="quap-part-image" style="width: 400px; height: auto;border: 1px solid lightgrey;padding: 20px;">
                                 </div>
                             </center>
                             <center>
-                                <div class="uren-social_link">
+                                <div class="uren-social_link" style="padding:30px 0px">
                                     <ul>
                                         <li class="facebook">
                                             <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
@@ -60,17 +60,7 @@
                                     </ul>
                                 </div>
                             </center>
-                            <div style="margin-top:50px;margin-bottom:30px;">
-                                <h5>Product Features:</h5>
-                                <ul>
-                                    <li>{{product.product_feature_1}}</li>
-                                    <li>{{product.product_feature_2}}</li>
-                                    <li>{{product.product_feature_3}}</li>
-                                    <li>{{product.product_feature_4}}</li>
-                                    <li>{{product.product_feature_5}}</li>
-                                </ul>
-                                <br>
-                            </div>
+
                         </div>
                         <div class="col-lg-7">
                              <div>
@@ -91,35 +81,142 @@
                                     <span style="font-size: 18px;color: black;"><b>Origin :</b></span>
                                     <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">OEM</span>
                                 </div>
-                                <div style="margin: 5% 0px;">
+                                <div style="margin: 20px 0px;">
                                     <span style="color: #0c2a5c;font-size: 34px;font-weight: bold;letter-spacing: 2px;">${{product.price}}</span>
                                     <span>Inclusive of all taxes</span>
                                 </div>
                                 <span style="color: #e52e06;">Warranty Details</span>
                                 <span>{{product.warranty}}</span>
 
+                               <div style="margin-top:30px;margin-bottom:30px;">
+                                    <h5>Product Features:</h5>
+                                    <ul>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_1}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_2}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_3}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_4}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_5}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_6}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_7}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_8}}</li>
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_9}}</li>
 
-                                <h6 style="margin-top: 9%;">SPECIFICATIONS</h6>
-                                <table class="table table-hover">
-                                    <tr>
-                                        <td>{{product.spec_1_qn}}:</td>
-                                        <td>{{product.spec_1_ans}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{product.spec_2_qn}}:</td>
-                                        <td>{{product.spec_2_ans}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{product.spec_3_qn}}:</td>
-                                        <td>{{product.spec_3_ans}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{product.spec_4_qn}}:</td>
-                                        <td>{{product.spec_4_ans}}</td>
-                                    </tr>
-                                </table>
+                                    </ul>
+                               </div>
+                               <div>
+                                   <button class="uren-btn" onclick="#test">Order Now</button>
+                               </div>
                             </div>
-                            <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Begin Uren's Single Product Tab Area -->
+        <div class="sp-product-tab_area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sp-product-tab_nav">
+                            <div class="product-tab">
+                                <ul class="nav product-menu">
+                                    <li><a class="active" data-toggle="tab" href="#description"><span>Description</span></a>
+                                    </li>
+                                    <li><a data-toggle="tab" href="#specification"><span>Specification</span></a></li>
+                                    <li><a data-toggle="tab" href="#reviews"><span>Reviews (1)</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-content uren-tab_content">
+                                <div id="description" class="tab-pane active show" role="tabpanel">
+                                    <div class="product-description">
+                                        <p>Odit repudiandae maxime, ducimus necessitatibus error fugiat nihil eum dolorem animi voluptates sunt, rem quod reprehenderit expedita, nostrum sit accusantium ut delectus. Voluptates at ipsam, eligendi labore dignissimos consectetur reprehenderit id error excepturi illo velit ratione nisi nam saepe quod! Reiciendis eos, velit fugiat voluptates accusamus nesciunt dicta ratione mollitia, asperiores error aliquam! Reprehenderit provident, omnis blanditiis fugit, accusamus deserunt illum unde, voluptatum consequuntur illo officiis labore doloremque quidem aperiam! Fuga, expedita? Laboriosam eum, tempore vitae lib</p>
+                                    </div>
+                                </div>
+                                <div id="specification" class="tab-pane" role="tabpanel">
+                                    <p><b>{{product.spec_1_qn}}:</b><span style="margin-left:20px">{{product.spec_1_ans}}</span></p>
+                                    <p><b>{{product.spec_2_qn}}:</b><span style="margin-left:20px">{{product.spec_2_ans}}</span></p>
+                                    <p><b>{{product.spec_3_qn}}:</b><span style="margin-left:20px">{{product.spec_3_ans}}</span></p>
+                                    <p><b>{{product.spec_4_qn}}:</b><span style="margin-left:20px">{{product.spec_4_ans}}</span></p>
+                                </div>
+                                <div id="reviews" class="tab-pane" role="tabpanel">
+                                    <div class="tab-pane active" id="tab-review">
+                                        <form class="form-horizontal" id="form-review">
+                                            <div id="review">
+                                                <table class="table table-striped table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width: 50%;"><strong>Customer</strong></td>
+                                                            <td class="text-right">15/09/20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <p>Good product! Thank you very much</p>
+                                                                <div class="rating-box">
+                                                                    <ul>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                        <li><i class="ion-android-star"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <h2>Write a review</h2>
+                                            <div class="form-group required">
+                                                <div class="col-sm-12 p-0">
+                                                    <label>Your Email <span class="required">*</span></label>
+                                                    <input class="review-input" type="email" name="con_email" id="con_email" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group required second-child">
+                                                <div class="col-sm-12 p-0">
+                                                    <label class="control-label">Share your opinion</label>
+                                                    <textarea class="review-textarea" name="con_message" id="con_message"></textarea>
+                                                    <div class="help-block"><span class="text-danger">Note:</span> HTML is not
+                                                        translated!</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group last-child required">
+                                                <div class="col-sm-12 p-0">
+                                                    <div class="your-opinion">
+                                                        <label>Your Rating</label>
+                                                        <span>
+                                                    <select class="star-rating">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="uren-btn-ps_right">
+                                                    <button class="uren-btn-2">Continue</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="container" style="padding: 50px 30px; background: #80808005;">
+            <div class="row">
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-6">
+                    <div>
                                 <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <label for="">Select Manufacturing Year</label>
@@ -146,39 +243,34 @@
                                 </form>
 
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4" id="Form">
-                        <!-- Login Form s-->
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-
+        -->
         <!-- Uren's Single Product Area End Here -->
         <div class="container-fluid" style="margin:50px 10px">
             <div>
-                <p style="border: 1px dotted #e52e06;" class="text-center">This item is not eligible for further promotional discounts, coupons or special offers.</p>
+                <p style="border: 1px dotted #e52e06;padding: 20px;background: #8080800a;" class="text-center">This item is not eligible for further promotional discounts, coupons or special offers.</p>
             </div>
                             <div class="row">
                                     <div class="col-lg-3">
                                             <div class="product-specs">
-                                                <h6><i class="fa fa-truck" aria-hidden="true"></i><span>Dispatch within 1 day</span></h6>
+                                                <h6><i class="fa fa-handshake" aria-hidden="true"></i><span>GENUINE PARTS</span></h6>
                                             </div>
                                         </div>
                                     <div class="col-lg-3">
                                             <div class="product-specs">
-                                                <h6><i class="fa fa-truck" aria-hidden="true"></i><span>90 Days Assured Return</span></h6>
+                                                <h6><i class="fa fa-truck" aria-hidden="true"></i><span>FAST DELIVERY</span></h6>
                                             </div>
                                         </div>
                                     <div class="col-lg-3">
                                             <div class="product-specs">
-                                                <h6><i class="fa fa-truck" aria-hidden="true"></i><span>Dispatch within 1 day</span></h6>
+                                                <h6><i class="fa fa-lock" aria-hidden="true"></i><span>SECURE PAYMENT</span></h6>
                                             </div>
                                         </div>
                                     <div class="col-lg-3">
                                             <div class="product-specs">
-                                                <h6><i class="fa fa-truck" aria-hidden="true"></i><span>Dispatch within 1 day</span></h6>
+                                                <h6><i class="fa fa-hand-holding-usd" aria-hidden="true"></i><span>POCKET-FRIENDLY</span></h6>
                                             </div>
                                         </div>
 
@@ -253,141 +345,8 @@
         </div>
 
 
-        <!-- Begin Uren's Single Product Tab Area
-        <div class="sp-product-tab_area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="sp-product-tab_nav">
-                            <div class="product-tab">
-                                <ul class="nav product-menu">
-                                    <li><a class="active" data-toggle="tab" href="#description"><span>Description</span></a>
-                                    </li>
-                                    <li><a data-toggle="tab" href="#specification"><span>Specification</span></a></li>
-                                    <li><a data-toggle="tab" href="#reviews"><span>Reviews (1)</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="tab-content uren-tab_content">
-                                <div id="description" class="tab-pane active show" role="tabpanel">
-                                    <div class="product-description">
-                                        <ul>
-                                            <li>
-                                                <strong>Ullam aliquam</strong>
-                                                <span>Voluptatum, minus? Optio molestias voluptates aspernatur laborum ratione minima, natus eaque nemo rem quisquam, suscipit architecto saepe. Debitis omnis labore laborum consectetur, quas, esse voluptates minus aliquam modi nesciunt earum! Vero rerum molestiae corporis libero repellat doloremque quae sapiente ratione maiores qui aliquam, sunt obcaecati! Iure nisi doloremque numquam delectus.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Enim tempore</strong>
-                                                <span>Molestias amet quibusdam eligendi exercitationem alias labore tenetur quaerat veniam similique aspernatur eveniet, suscipit corrupti itaque dolore deleniti nobis, rerum reprehenderit recusandae. Eligendi beatae asperiores nisi distinctio doloribus voluptatibus voluptas repellendus tempore unde velit temporibus atque maiores aliquid deserunt aspernatur amet, soluta fugit magni saepe fugiat vel sunt voluptate vitae</span>
-                                            </li>
-                                            <li>
-                                                <strong>Laudantium suscipit</strong>
-                                                <span>Odit repudiandae maxime, ducimus necessitatibus error fugiat nihil eum dolorem animi voluptates sunt, rem quod reprehenderit expedita, nostrum sit accusantium ut delectus. Voluptates at ipsam, eligendi labore dignissimos consectetur reprehenderit id error excepturi illo velit ratione nisi nam saepe quod! Reiciendis eos, velit fugiat voluptates accusamus nesciunt dicta ratione mollitia, asperiores error aliquam! Reprehenderit provident, omnis blanditiis fugit, accusamus deserunt illum unde, voluptatum consequuntur illo officiis labore doloremque quidem aperiam! Fuga, expedita? Laboriosam eum, tempore vitae libero voluptate omnis ducimus doloremque hic quibusdam reiciendis ab itaque aperiam maiores laudantium esse, consequuntur quos labore modi quasi recusandae distinctio iusto optio officia tempora.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Molestiae veritatis officia</strong>
-                                                <span>Illum fuga esse tenetur inventore, in voluptatibus saepe iste quia cupiditate, explicabo blanditiis accusantium ut. Eaque nostrum, quisquam doloribus asperiores tempore autem. Ea perspiciatis vitae reiciendis maxime similique vel, id ratione blanditiis ullam officiis odio sunt nam quos atque accusantium ad! Repellendus, magni aliquid. Iure asperiores veniam eum unde dignissimos reprehenderit ut atque velit, harum labore nam expedita, pariatur excepturi consectetur animi optio mollitia ad a natus eaque aut assumenda inventore dolor obcaecati! Enim ab tempore nulla iusto consequuntur quod sit voluptatibus adipisci earum fuga, explicabo amet, provident, molestiae optio. Ducimus ex necessitatibus assumenda, nisi excepturi ut aspernatur est eius dignissimos pariatur unde ipsum sunt quaerat.</span>
-                                            </li>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div id="specification" class="tab-pane" role="tabpanel">
-                                    <table class="table table-bordered specification-inner_stuff">
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="2"><strong>Memory</strong></td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td>test 1</td>
-                                                <td>8gb</td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="2"><strong>Processor</strong></td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td>No. of Cores</td>
-                                                <td>1</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div id="reviews" class="tab-pane" role="tabpanel">
-                                    <div class="tab-pane active" id="tab-review">
-                                        <form class="form-horizontal" id="form-review">
-                                            <div id="review">
-                                                <table class="table table-striped table-bordered">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="width: 50%;"><strong>Customer</strong></td>
-                                                            <td class="text-right">15/09/20</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <p>Good product! Thank you very much</p>
-                                                                <div class="rating-box">
-                                                                    <ul>
-                                                                        <li><i class="ion-android-star"></i></li>
-                                                                        <li><i class="ion-android-star"></i></li>
-                                                                        <li><i class="ion-android-star"></i></li>
-                                                                        <li><i class="ion-android-star"></i></li>
-                                                                        <li><i class="ion-android-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <h2>Write a review</h2>
-                                            <div class="form-group required">
-                                                <div class="col-sm-12 p-0">
-                                                    <label>Your Email <span class="required">*</span></label>
-                                                    <input class="review-input" type="email" name="con_email" id="con_email" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group required second-child">
-                                                <div class="col-sm-12 p-0">
-                                                    <label class="control-label">Share your opinion</label>
-                                                    <textarea class="review-textarea" name="con_message" id="con_message"></textarea>
-                                                    <div class="help-block"><span class="text-danger">Note:</span> HTML is not
-                                                        translated!</div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group last-child required">
-                                                <div class="col-sm-12 p-0">
-                                                    <div class="your-opinion">
-                                                        <label>Your Rating</label>
-                                                        <span>
-                                                    <select class="star-rating">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </span>
-                                                    </div>
-                                                </div>
-                                                <div class="uren-btn-ps_right">
-                                                    <button class="uren-btn-2">Continue</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        Uren's Single Product Tab Area End Here -->
+        <!--Uren's Single Product Tab Area End Here -->
 
 
         <!-- Uren's Product Area End Here -->
