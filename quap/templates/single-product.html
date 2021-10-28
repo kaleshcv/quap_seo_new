@@ -23,16 +23,12 @@
             <div class="container-fluid">
                 <div class="sp-nav">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <center>
-                                <div>
-                                <small>Product Name</small>
-                                <h2>{{product.product_name}}</h2>
-                            </div>
-                            <div style="padding:50px;">
-                                <img src="{{product.product_image.url}}" alt="quap-part-image" style="width: 300px; height: 300px;border: 1px solid lightgrey;padding: 20px;">
-                            </div>
-                                </center>
+                                <div style="padding:0px 50px;">
+                                    <img src="{{product.product_image.url}}" alt="quap-part-image" style="width: 400px; height: 400px;border: 1px solid lightgrey;padding: 20px;">
+                                </div>
+                            </center>
                             <center>
                                 <div class="uren-social_link">
                                     <ul>
@@ -76,17 +72,34 @@
                                 <br>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-7">
+                             <div>
+                                <h2>{{product.product_name}}</h2>
+                                 <br>
+                            </div>
                             <div>
-                                <h6>PRODUCT DETAILS</h6>
-                                <p>Part No. {{product.part_number}}</p>
-                                <span>Price:</span>
-                                <span style="color: green;font-size: 24px;">{{product.price}}</span><br>
+                                <div>
+                                    <span style="font-size: 18px;color: black;"><b>Category :</b></span>
+                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">Used Auto Part</span>
+                                    <span style="margin: 0px 15px;">|</span>
+                                    <span style="font-size: 18px;color: black;"><b>Part No :</b></span>
+                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">{{product.part_number}}</span>
+                                    <span style="margin: 0px 15px;">|</span>
+                                    <span style="font-size: 18px;color: black;"><b>Brand :</b></span>
+                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">{{product.brand}}Brand Name</span>
+                                    <span style="margin: 0px 15px;">|</span>
+                                    <span style="font-size: 18px;color: black;"><b>Origin :</b></span>
+                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">OEM</span>
+                                </div>
+                                <div style="margin: 5% 0px;">
+                                    <span style="color: #0c2a5c;font-size: 34px;font-weight: bold;letter-spacing: 2px;">${{product.price}}</span>
+                                    <span>Inclusive of all taxes</span>
+                                </div>
                                 <span style="color: #e52e06;">Warranty Details</span>
                                 <span>{{product.warranty}}</span>
-                                <br><br>
 
-                                <h6>SPECIFICATIONS</h6>
+
+                                <h6 style="margin-top: 9%;">SPECIFICATIONS</h6>
                                 <table class="table table-hover">
                                     <tr>
                                         <td>{{product.spec_1_qn}}:</td>

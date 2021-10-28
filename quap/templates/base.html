@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title%}{% endblock title %}</title>
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="{{url}}"/>
+    <link rel="canonical" href="https://www.quickusedautoparts.com{{ request.path }}"/>
     {% block desc %}
     {% endblock desc %}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -159,6 +159,7 @@
                                 </a>
                             </div>
                         </div>
+
                         <div class="custom-category_col col-12">
                             <div class="category-menu category-menu-hidden">
                                 <div class="category-heading">
@@ -180,6 +181,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="custom-search_col col-12">
                             <div class="hm-form_area">
                                 <form action="/used-auto-parts-us" class="hm-searchbox" method="POST" enctype="multipart/form-data">
@@ -199,7 +201,6 @@
                                     <li class="mobile-menu_wrap d-flex d-lg-none">
                                         <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
                                             <i class="ion-navicon" style="font-size: 30px;margin-left: 70px">Quick Search</i>
-
                                         </a>
                                     </li>
                                     <li class="contact-us_wrap">
