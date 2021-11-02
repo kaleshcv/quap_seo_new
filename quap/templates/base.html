@@ -40,6 +40,53 @@
     <!--------- Google Analytics --------------------------->
     <meta name="google-site-verification" content="aMDujl1-l1Gc6aSLvdqmj01BKlnjK9k2L6i6Zve5LwU">
 
+    <style>
+        .dropbtn {
+          background-color: #ffc400;
+          color: #0c2a5c;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          width: 300px;
+          font-weight: 600;
+          border-radius:6px;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+          background-color: #ffc400;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #fff;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          width: 300px;
+          border-radius:6px;
+
+        }
+
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .dropdown a:hover {background-color: lightgrey;color:#0c2a5c!important;}
+
+        .show {display: block;}
+    </style>
+
 </head>
 
 <body class="template-color-1">
@@ -75,7 +122,7 @@
                             <div class="main-menu_area position-relative">
                                 <nav class="main-nav">
                                     <ul>
-                                        <li class="dropdown-holder active"><a href="/">Home</a>
+                                        <li class="dropdown-holder"><a href="/">Home</a>
                                         </li>
                                         <li class="megamenu-holder"><a href="/used-auto-parts-us">Products</a>
                                         </li>
@@ -108,7 +155,7 @@
                             <div class="main-menu_area position-relative">
                                 <nav class="main-nav">
                                     <ul>
-                                        <li class="dropdown-holder active"><a href="/">Home</a>
+                                        <li class="dropdown-holder"><a href="/">Home</a>
                                         </li>
                                         <li class="megamenu-holder"><a href="/used-auto-parts-us">Products</a>
                                         </li>
@@ -159,7 +206,20 @@
                                 </a>
                             </div>
                         </div>
-
+                        <div class="custom-category_col col-12">
+                            <center>
+                                <div class="category-menu category-menu-hidden dropdown">
+                                  <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars" aria-hidden="true" style="margin-right: 15px;"></i>Browse By Category
+                                  <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 10px;"></i></button>
+                                  <div id="myDropdown" class="dropdown-content">
+                                    <a href="/used-auto-parts-us/category/engine">Engine</a>
+                                    <a href="#about">Transmission</a>
+                                    <a href="#contact">Body Parts</a>
+                                  </div>
+                                </div>
+                            </center>
+                        </div>
+                        <!-----------
                         <div class="custom-category_col col-12">
                             <div class="category-menu category-menu-hidden">
                                 <div class="category-heading">
@@ -181,7 +241,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        ------>
                         <div class="custom-search_col col-12">
                             <div class="hm-form_area">
                                 <form action="/used-auto-parts-us" class="hm-searchbox" method="POST" enctype="multipart/form-data">
@@ -435,10 +495,9 @@
                                         </div>
                                         <div class="footer-widgets">
                                             <ul>
-                                                <li><a href="javascript:void(0)">About Us</a></li>
-                                                <li><a href="javascript:void(0)">Delivery Information</a></li>
-                                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                                                <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                                                <li><a href="/used-auto-parts-us">Products</a></li>
+                                                <li><a href="/blogs">Blogs</a></li>
+                                                <li><a href="/states">Locations</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -534,6 +593,27 @@
 
     <!-- Main JS -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
 
 </body>
 

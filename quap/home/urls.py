@@ -28,6 +28,7 @@ urlpatterns = [
 
     path('used-auto-parts-us',productHomePage),
     path('used-auto-parts-us/<str:pname>',singleProductPage),
+    path('used-auto-parts-us/<str:pname>/<int:pid>',singleProductPageNew),
 
     path('products-shops-local',productShopLocalArea),
     path('states',storeLocator),
@@ -45,6 +46,9 @@ urlpatterns = [
     path('about-us',aboutUS),
     path('order-completed',orderCompleted),
     path('auto-part-deal-usa',offersAndDiscounts),
+
+    #Category
+    path('used-auto-parts/category/engine',categoryEngine),
 
     # Test
     path('cp',changeProductName),

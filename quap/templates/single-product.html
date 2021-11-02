@@ -10,13 +10,12 @@
                     <h2>{{product.product_name}}</h2>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/">Used Auto Parts</a></li>
+                        <li><a href="/used-auto-parts-us">Used Auto Parts</a></li>
                         <li class="active">{{product.product_name}}</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- Uren's Breadcrumb Area End Here -->
 
         <!-- Begin Uren's Single Product Area -->
         <div class="sp-area">
@@ -24,6 +23,13 @@
                 <div class="sp-nav">
                     <div class="row">
                         <div class="col-lg-5">
+                            <div style="margin-bottom:20px;font-size:20px;font-weight:600;color:#e52e06">
+                                <span><a href="/">Home</a></span>
+                                <span>/</span>
+                                <span><a href="/used-auto-parts-us">Used Auto Parts</a></span>
+                                <span>/</span>
+                                <span>{{product.product_name}}</span>
+                            </div>
                             <center>
                                 <div style="padding:0px 50px;">
                                     <img class="img-fluid" src="{{product.product_image.url}}" alt="quap-part-image" style="width: 400px; height: auto;border: 1px solid lightgrey;padding: 20px;">
@@ -91,20 +97,55 @@
                                <div style="margin-top:30px;margin-bottom:30px;">
                                     <h5>Product Features:</h5>
                                     <ul>
+
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_1}}</li>
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_2}}</li>
+                                        {% if product.product_feature_3 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_3}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_4 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_4}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_5 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_5}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_6 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_6}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_7 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_7}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_8 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_8}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_9 != None %}
                                         <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_9}}</li>
+                                        {% endif %}
+                                        {% if product.product_feature_10 != None %}
+                                        <li style="font-size: 18px;color: black;line-height: 30px;">{{product.product_feature_10}}</li>
+                                        {% endif %}
 
                                     </ul>
                                </div>
                                <div>
-                                   <button class="uren-btn" onclick="#test">Order Now</button>
+                                   <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                        <label>Select Brand</label>
+                                            <select name="brand" id="" class="form-control">
+                                                {% for brand in brands %}
+                                                <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        <label for="">Select Manufacturing Year</label>
+                                        <select name="year" id="" class="form-control">
+                                                {% for ye in years %}
+                                                <option value="{{ye.year_name}}">{{ye.year_name}}</option>
+                                                {% endfor %}
+                                        </select>
+                                        <br>
+                                        <button class="uren-btn" onclick="#test">Order Now</button>
+                                    </form>
+
                                </div>
                             </div>
 
@@ -130,14 +171,42 @@
                             <div class="tab-content uren-tab_content">
                                 <div id="description" class="tab-pane active show" role="tabpanel">
                                     <div class="product-description">
-                                        <p>Odit repudiandae maxime, ducimus necessitatibus error fugiat nihil eum dolorem animi voluptates sunt, rem quod reprehenderit expedita, nostrum sit accusantium ut delectus. Voluptates at ipsam, eligendi labore dignissimos consectetur reprehenderit id error excepturi illo velit ratione nisi nam saepe quod! Reiciendis eos, velit fugiat voluptates accusamus nesciunt dicta ratione mollitia, asperiores error aliquam! Reprehenderit provident, omnis blanditiis fugit, accusamus deserunt illum unde, voluptatum consequuntur illo officiis labore doloremque quidem aperiam! Fuga, expedita? Laboriosam eum, tempore vitae lib</p>
+                                        {{product.description|safe}}
                                     </div>
                                 </div>
                                 <div id="specification" class="tab-pane" role="tabpanel">
+                                    {% if product.spec_1_qn != None %}
                                     <p><b>{{product.spec_1_qn}}:</b><span style="margin-left:20px">{{product.spec_1_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_2_qn != None %}
                                     <p><b>{{product.spec_2_qn}}:</b><span style="margin-left:20px">{{product.spec_2_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_3_qn != None %}
                                     <p><b>{{product.spec_3_qn}}:</b><span style="margin-left:20px">{{product.spec_3_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_4_qn != None %}
                                     <p><b>{{product.spec_4_qn}}:</b><span style="margin-left:20px">{{product.spec_4_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_5_qn != None %}
+                                    <p><b>{{product.spec_5_qn}}:</b><span style="margin-left:20px">{{product.spec_5_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_6_qn != None %}
+                                    <p><b>{{product.spec_6_qn}}:</b><span style="margin-left:20px">{{product.spec_6_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_7_qn != None %}
+                                    <p><b>{{product.spec_7_qn}}:</b><span style="margin-left:20px">{{product.spec_7_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_8_qn != None %}
+                                    <p><b>{{product.spec_8_qn}}:</b><span style="margin-left:20px">{{product.spec_8_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_9_qn != None %}
+                                    <p><b>{{product.spec_9_qn}}:</b><span style="margin-left:20px">{{product.spec_9_ans}}</span></p>
+                                    {% endif %}
+                                    {% if product.spec_10_qn != None %}
+                                    <p><b>{{product.spec_10_qn}}:</b><span style="margin-left:20px">{{product.spec_10_ans}}</span></p>
+                                    {% endif %}
+
+
                                 </div>
                                 <div id="reviews" class="tab-pane" role="tabpanel">
                                     <div class="tab-pane active" id="tab-review">

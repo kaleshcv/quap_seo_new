@@ -129,73 +129,23 @@
                 </div>
             </div>
         </div>
-        <!-- Begin Uren's Product Area -->
-        <div style="padding: 30px 20px;background: #d3d3d32e;margin-bottom: 30px;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div>
-                            <h3>Popular Products</h3>
-                        </div>
-                        <div class="product-slider uren-slick-slider slider-navigation_style-1 img-hover-effect_area" data-slick-options='{
-                        "slidesToShow": 6,
-                        "arrows" : true
-                        }' data-slick-responsive='[
-                                                {"breakpoint":1501, "settings": {"slidesToShow": 4}},
-                                                {"breakpoint":1200, "settings": {"slidesToShow": 3}},
-                                                {"breakpoint":992, "settings": {"slidesToShow": 2}},
-                                                {"breakpoint":767, "settings": {"slidesToShow": 1}},
-                                                {"breakpoint":480, "settings": {"slidesToShow": 1}}
-                                            ]'>
-                            {% for p in pop_products %}
-
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a>
-                                                <img class="primary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="height: 250px;padding:20px;">
-                                                <img class="secondary-img" src="{{p.product_image.url}}" alt="Uren's Product Image" style="height: 250px;padding:20px;">
-                                            </a>
-                                            <div class="sticker">
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="add-actions">
-                                                <form action="/used-auto-parts-us/{{p.product_name|slugify}}" method="POST" enctype="multipart/form-data">
-                                                        {% csrf_token %}
-                                                        <input type="hidden" name="pid" value="{{p.id}}">
-                                                        <p style="margin-top:5px;">{{p.product_name}}</p>
-                                                        <button type="submit" class="btn btn-secondary">Get Quote</button>
-
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name">{{p.product_name}}</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">Get Quote</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {% endfor %}
-
-                        </div>
+        <!------------- Pop Products ----------------->
+        <div class="container-fluid" style="padding:50px">
+            <h2>Popular Products</h2>
+            <div class="row">
+                {% for p in pop_products %}
+                <div class="col-lg-2" style="margin:30px 0px">
+                    <div style="background:#fbfbfb;padding-bottom:20px">
+                        <span style="background: #ffc400;padding: 2px 9px;border-radius: 5px;color: black;">Used</span>
+                        <span style="float:right">OEM</span>
+                        <center>
+                            <a href="/used-auto-parts-us/{{p.product_name|slugify}}/{{p.id}}"><img class="primary-img" src="{{p.product_image.url}}" alt="QUAP's Product Image" style="height: 200px;padding:20px;"></a>
+                            <h5 style="margin-top:5px;"><a href="/used-auto-parts-us/{{p.product_name|slugify}}/{{p.id}}" style="color: #0c2a5c;">{{p.product_name}}</a></h5>
+                            <h5 style="color: #e52e06;font-weight: bold;">${{p.price}}</h5>
+                        </center>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
         <div class="container-fluid" style="margin-bottom:30px">

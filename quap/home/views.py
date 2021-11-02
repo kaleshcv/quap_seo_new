@@ -33,10 +33,15 @@ def indexPage(request):
     all_years = Years.objects.all()
     brands = Brands.objects.all()
     products = Products.objects.exclude(product_image="products/default.jpg")
+    engine_set = Products.objects.filter(product_name__icontains='engine').order_by('-id')[:4]
     first_set = Products.objects.all().order_by('-id')[:4]
     second_set = Products.objects.all().order_by('-id')[4:8]
+
+    newproducts = Products.objects.exclude(product_image="products/default.jpg").order_by('-id')[:12]
+
     data = {'blogs': blogs,'parts':parts,'all_years':all_years,'brands':brands,'url':url_ob,'products':products,
-            'first_set':first_set,'second_set':second_set
+            'first_set':first_set,'second_set':second_set,'engine_set':engine_set,
+            'newproducts':newproducts,
             }
     return render(request,'index.html',data)
 
@@ -47,7 +52,7 @@ def productHomePage(request):
         products = Products.objects.filter(product_name__icontains=part)
         if products.count()==0:
             products = Products.objects.exclude(product_image="products/default.jpg")
-        pop_products = Products.objects.all()
+        pop_products = Products.objects.filter(popular_product=True).order_by('-id')[:12]
         side_products = Products.objects.all().order_by('-id')[100:115]
         data = {'products':products,'pop_products':pop_products,'side_products':side_products}
         return render(request, 'shop-left-sidebar.html', data)
@@ -56,7 +61,7 @@ def productHomePage(request):
         side_products = Products.objects.all().order_by('-id')[200:215]
         products = Products.objects.exclude(product_image="products/default.jpg")
         brands = Brands.objects.all()[:15]
-        pop_products = Products.objects.all()
+        pop_products = Products.objects.filter(popular_product=True).order_by('-id')[:12]
         data = {'products': products, 'brands': brands, 'side_products': side_products,'pop_products':pop_products}
         return render(request, 'shop-left-sidebar.html', data)
 
@@ -71,22 +76,29 @@ def singleProductPage(request,pname):
         products = Products.objects.exclude(product_image="products/default.jpg")
         data = {'product': product, 'years': all_years, 'brands': brands,'products':products}
         return render(request, 'single-product.html', data)
-
     else:
         part = pname.replace('-',' ')
-        part = part.title()
+
         try:
             product = Products.objects.get(product_name__iexact=part)
         except Products.DoesNotExist:
-
             product = None
             messages.info(request,'The requested product does not exist')
             return redirect('/used-auto-parts-us')
+
         all_years = Years.objects.all()
         brands = Brands.objects.all()
         products = Products.objects.exclude(product_image="products/default.jpg")
         data = {'product': product,'years':all_years,'brands':brands,'products':products}
         return render(request, 'single-product.html', data)
+
+def singleProductPageNew(request,pname,pid):
+    product = Products.objects.get(id=pid)
+    all_years = Years.objects.all()
+    brands = Brands.objects.all()
+    products = Products.objects.exclude(product_image="products/default.jpg")
+    data = {'product': product, 'years': all_years, 'brands': brands, 'products': products}
+    return render(request, 'single-product.html', data)
 
 
 
@@ -257,4 +269,8 @@ def redirectToProductPageOne(request):
 def redirectToBlog(request):
     return redirect('/blogs/benefits-of-buying-used-auto-parts')
 
+# Engine ###########
+
+def categoryEngine(request):
+    pass
 
