@@ -53,16 +53,19 @@ def productHomePage(request):
         if products.count()==0:
             products = Products.objects.exclude(product_image="products/default.jpg")
         pop_products = Products.objects.filter(popular_product=True).order_by('-id')[:12]
+        brands = Brands.objects.all()
+        all_years = Years.objects.all()
         side_products = Products.objects.all().order_by('-id')[100:115]
-        data = {'products':products,'pop_products':pop_products,'side_products':side_products}
+        data = {'products':products,'pop_products':pop_products,'side_products':side_products,'brands':brands,'years':all_years}
         return render(request, 'shop-left-sidebar.html', data)
 
     else:
         side_products = Products.objects.all().order_by('-id')[200:215]
         products = Products.objects.exclude(product_image="products/default.jpg")
-        brands = Brands.objects.all()[:15]
+        brands = Brands.objects.all()
+        all_years = Years.objects.all()
         pop_products = Products.objects.filter(popular_product=True).order_by('-id')[:12]
-        data = {'products': products, 'brands': brands, 'side_products': side_products,'pop_products':pop_products}
+        data = {'products': products, 'brands': brands, 'side_products': side_products,'pop_products':pop_products,'years':all_years}
         return render(request, 'shop-left-sidebar.html', data)
 
 
@@ -200,17 +203,17 @@ def subscribeNow(request):
 def contactWithPart(request):
     if request.method == 'POST':
         year = request.POST['year']
-        part = request.POST['part']
-        brand = request.POST['brand']
-        customer_name = request.POST['customer_name']
-        customer_phone = request.POST['customer_phone']
-        customer_email = request.POST['customer_email']
+        part_id = request.POST['part_id']
+        brand_id = request.POST['brand_id']
+        part = Products.objects.get(id=part_id)
+        brand = Brands.objects.get(id=brand_id)
 
-        customer = Customer.objects.create(year = year,part = part, brand = brand,
-                   customer_name=customer_name,customer_phone=customer_phone,customer_email=customer_email)
-        customer.save()
-        data = {'year':year,'part':part,'brand':brand}
-        return render(request,'thanks-for-order.html',data)
+        data = {'year':year,'product':part,'brand':brand}
+        return render(request,'single-product-search.html',data)
+    else:
+        pass
+
+
 
 def orderCompleted(request):
     return render(request,'thanks-for-order.html')

@@ -82,10 +82,13 @@
                                     <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">{{product.part_number}}</span>
                                     <span style="margin: 0px 15px;">|</span>
                                     <span style="font-size: 18px;color: black;"><b>Brand :</b></span>
-                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">{{product.brand}}Brand Name</span>
+                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">{{brand.brand_name}}</span>
                                     <span style="margin: 0px 15px;">|</span>
                                     <span style="font-size: 18px;color: black;"><b>Origin :</b></span>
                                     <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">OEM</span>
+                                    <span style="margin: 0px 15px;">|</span>
+                                    <span style="font-size: 18px;color: black;"><b>Selected Manf. Year :</b></span>
+                                    <span style="font-size: 18px;color: #0c2a5c;letter-spacing: 2px;">{{year}}</span>
                                 </div>
                                 <div style="margin: 20px 0px;">
                                     <span style="color: #0c2a5c;font-size: 34px;font-weight: bold;letter-spacing: 2px;">${{product.price}}</span>
@@ -128,21 +131,8 @@
                                     </ul>
                                </div>
                                <div>
-                                   <form action="/get-instant-quote" method="POST" enctype="multipart/form-data">
+                                   <form action="#" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
-                                        <label>Select Brand</label>
-                                            <select name="brand" id="" class="form-control">
-                                                {% for brand in brands %}
-                                                <option value="{{brand.brand_name}}" class="form-control">{{brand.brand_name}}</option>
-                                                {% endfor %}
-                                            </select>
-                                        <label for="">Select Manufacturing Year</label>
-                                        <select name="year" id="" class="form-control">
-                                                {% for ye in years %}
-                                                <option value="{{ye.year_name}}">{{ye.year_name}}</option>
-                                                {% endfor %}
-                                        </select>
-                                        <br>
                                         <button class="uren-btn" onclick="#test">Order Now</button>
                                     </form>
 
@@ -346,26 +336,6 @@
                                 </div>
         </div>
 
-        <!--Uren's Single Product Tab Area End Here -->
-        <!------------- Pop Products ----------------->
-        <div class="container-fluid" style="padding:50px">
-            <h2>Popular Products</h2>
-            <div class="row">
-                {% for p in products %}
-                <div class="col-lg-2" style="margin:30px 0px">
-                    <div style="background:#fbfbfb;padding-bottom:20px">
-                        <span style="background: #ffc400;padding: 2px 9px;border-radius: 5px;color: black;">Used</span>
-                        <span style="float:right">OEM</span>
-                        <center>
-                            <a href="/used-auto-parts-us/{{p.product_name|slugify}}/{{p.id}}"><img class="primary-img" src="{{p.product_image.url}}" alt="QUAP Product Image" style="height: 200px;padding:20px;"></a>
-                            <h5 style="margin-top:5px;"><a href="/used-auto-parts-us/{{p.product_name|slugify}}/{{p.id}}" style="color: #0c2a5c;">{{p.product_name}}</a></h5>
-                            <h5 style="color: #e52e06;font-weight: bold;">${{p.price}}</h5>
-                        </center>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
 
         <!-- Uren's Product Area End Here -->
 
